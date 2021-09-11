@@ -172,7 +172,7 @@ bindsym $mod+o exec --no-startup-id rofi -show combi
 bindsym $mod+p exec --no-startup-id rofi -show run
 
 # Webbrowser: Brave 
-bindsym $mod+Shift+w exec brave
+bindsym $mod+Shift+w exec firefo
 
 # Lock
 bindsym $mod+y exec blurlock
