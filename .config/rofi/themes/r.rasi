@@ -1,0 +1,19 @@
+* {
+    background-color: rgba(0,0,0,0);
+    color: #fff;
+    font: "Iosevka Aile 13";
+    spacing: 3;
+}
+
+#scrollbar {
+    width:        0px ;
+    border:       0;
+    handle-width: 0px ;
+    padding:      0;
+}
+
+#window {
+    padding: 8;
+    background-color: rgba(8,14,16,0.8);
+
+}

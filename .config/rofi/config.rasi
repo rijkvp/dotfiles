@@ -1,0 +1,6 @@
+configuration {
+    modi: "window,run,combi";
+    font: "Iosevka Aile Medium 11";
+    show-icons: true;
+    theme: "~/.config/rofi/themes/r.rasi";
+}

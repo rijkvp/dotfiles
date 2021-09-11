@@ -1,0 +1,210 @@
+[colors]
+background = #2E3440
+background-alt = #4C566A
+foreground = #fff
+foreground-alt = #D8DEE9
+primary = #289bff
+secondary = #00e595
+alert = #bd2c40
+
+[bar/top]
+width = 100%
+height = 22
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+padding-left = 1
+padding-right = 1 
+
+module-margin-left = 2
+module-margin-right = 2 
+
+font-0 = Iosevka Aile:style=Normal:size=12;2
+font-1 = Iosevka Aile:style=Light:size=11;2
+font-2 = Iosevka Aile:style=Bold:size=11;2
+font-3 = Iosevka Nerd Font:size=14;2
+
+modules-left = i3 
+modules-center = xwindow
+modules-right = pulseaudio memory cpu temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+tray-background = #262b35 
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-font = 2
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+reverse-scroll = true
+
+ws-icon-0 = 1;Main
+ws-icon-1 = 2;Dev
+ws-icon-2 = 3;Com
+ws-icon-3 = 4;Game
+ws-icon-4 = 5;Media
+ws-icon-5 = 6;X
+ws-icon-6 = 7;A
+ws-icon-7 = 8;B
+ws-icon-8 = 9;C
+ws-icon-default = "Dev"
+
+label-mode-padding = 1
+label-mode-background = ${colors.primary}
+
+label-focused = %icon%
+label-focused-font = 3
+label-focused-background = ${colors.background-alt}
+# label-focused-underline = ${colors.primary}
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1
+label-unfocused-font = 2
+
+label-visible = %icon%
+label-visible-padding = 1
+
+label-urgent = %icon% 
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/cpu]
+type = internal/cpu
+
+format-prefix = "CPU"
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 1 
+format-prefix = "RAM "
+label = %gb_used:0:3%/%gb_total% 
+
+[module/date]
+type = internal/date
+
+date = "%d-%m-%Y"
+
+time = %H:%M:%S
+
+label =   %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume-font = 4
+format-volume-prefix = "奔 "
+format-volume = <label-volume>
+
+format-muted-font = 4
+format-muted-prefix = "婢 "
+label-volume = %percentage%%
+
+label-volume-foreground = ${root.foreground}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label>
+format-warn = <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+[module/networkspeed]
+type = internal/network
+interface = enp9s0
+interval = 0.5
+label-connected =  %upspeed:6%  %downspeed:6%
+format-connected = <label-connected>
+label-disconnected = "DISCONNECTED"
+format-disconnected = <label-disconnected>
+label-disconnected-foreground = #f2463a
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0

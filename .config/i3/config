@@ -1,0 +1,210 @@
+# Modifier key 
+set $mod Mod4
+
+# Vim-keys
+set $left h  
+set $up k
+set $right l
+set $down j
+
+# Font
+font pango:Iosevka Aile Medium 11
+
+# Audio stuff 
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym $mod+n exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym $mod+b exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Shift+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#####################
+# WINDOW MANAGEMENT #
+#####################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Change focus
+bindsym $mod+$left focus left
+bindsym $mod+$up focus up
+bindsym $mod+$down focus down
+bindsym $mod+$right focus right
+# Alternative: arrow keys 
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$right move right
+# Alternative: arrow keys 
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split 
+bindsym $mod+c split h
+bindsym $mod+v split v
+
+# Toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# Container layouts: default
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+d focus child
+
+
+##############
+# WORKSPACES #
+##############
+
+# Names
+set $ws1 1
+set $ws2 2 
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+
+# Switch workspaces
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+
+# Resize windows
+set $resize_factor 2 
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+        bindsym $right resize shrink width $resize_factor px or $resize_factor ppt
+        bindsym $left resize grow width $resize_factor px or $resize_factor ppt 
+        bindsym $up resize shrink height $resize_factor px or $resize_factor ppt
+        bindsym $down resize grow height $resize_factor px or $resize_factor ppt
+        # Alternative: arrow keys
+        bindsym Right resize shrink width $resize_factor px or $resize_factor ppt
+        bindsym Left resize grow width $resize_factor px or $resize_factor ppt 
+        bindsym Up resize shrink height $resize_factor px or $resize_factor ppt
+        bindsym Down resize grow height $resize_factor px or $resize_factor ppt
+
+        # Toggle mode back
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+
+##############
+# APPEARANCE #
+##############
+
+default_border none 
+default_floating_border none
+title_align center
+hide_edge_borders both
+
+set $bg #2E3440
+set $bg-alt #4C566A
+set $fg #ECEFF4
+set $fg-alt ##D8DEE9
+set $primary #000000
+
+client.focused              $bg $bg-alt $fg $primary $bg-alt 
+client.focused_inactive     $bg $bg $fg $bg $bg 
+client.unfocused            $bg $bg $fg $bg $bg 
+client.urgent               $bg $bg $fg $bg $bg 
+client.placeholder          $bg $bg $fg $bg $bg $bg 
+client.background        $bg   
+
+#############
+# SHORTCUTS #
+#############
+
+# Terminal emulator: Alacritty
+bindsym $mod+Return exec alacritty
+# Program launcher: dmenu 
+bindsym $mod+o exec --no-startup-id rofi -show combi
+bindsym $mod+p exec --no-startup-id rofi -show run
+
+# Webbrowser: Brave 
+bindsym $mod+Shift+w exec brave
+
+# Lock
+bindsym $mod+y exec blurlock
+# Lock & suspend
+bindsym $mod+Shift+y exec blurlock && systemctl suspend 
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+##############
+# AUTO START #
+##############
+
+# Desktop
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+
+# Programs
+exec_always nextcloud --background
+exec_always element-desktop --hidden
+exec_always veracrypt --background-task
+
+# Wallpaper
+exec_always feh --bg-fill ~/pics/wallpaper1.jpg
+
+###########
+# i3 GAPS #
+###########
+
+gaps inner 16
+gaps outer 0
