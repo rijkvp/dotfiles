@@ -79,7 +79,7 @@ schemes:
 
 colors: *nord 
 
-background_opacity: 0.9
+background_opacity: 0.75
 
 key_bindings:
   # Copy/paste with CRTL+Shift or Alt

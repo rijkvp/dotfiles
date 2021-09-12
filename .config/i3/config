@@ -8,7 +8,7 @@ set $right l
 set $down j
 
 # Font
-font pango:Iosevka Aile Medium 11
+font pango:Iosevka Aile SemiBold 11
 
 # Audio stuff 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -148,17 +148,16 @@ default_floating_border none
 title_align center
 hide_edge_borders both
 
-set $bg #2E3440
-set $bg-alt #4C566A
+set $bg #2e3440
+set $bg-alt #4c566a
 set $fg #ECEFF4
-set $fg-alt ##D8DEE9
-set $primary #000000
 
-client.focused              $bg $bg-alt $fg $primary $bg-alt 
-client.focused_inactive     $bg $bg $fg $bg $bg 
-client.unfocused            $bg $bg $fg $bg $bg 
-client.urgent               $bg $bg $fg $bg $bg 
-client.placeholder          $bg $bg $fg $bg $bg $bg 
+# class                     border  backgr. text    indicator child_border
+client.focused              $bg-alt $bg-alt $fg $primary $bg-alt 
+client.focused_inactive     $bg $bg     $fg $bg $bg 
+client.unfocused            $bg $bg     $fg $bg $bg 
+client.urgent               $bg $bg     $fg $bg $bg 
+client.placeholder          $bg $bg     $fg $bg $bg $bg 
 client.background        $bg   
 
 #############
@@ -175,9 +174,9 @@ bindsym $mod+p exec --no-startup-id rofi -show run
 bindsym $mod+Shift+w exec firefox
 
 # Lock
-bindsym $mod+y exec blurlock
+bindsym $mod+y exec slock
 # Lock & suspend
-bindsym $mod+Shift+y exec blurlock && systemctl suspend 
+bindsym $mod+Shift+y exec systemctl suspend 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
