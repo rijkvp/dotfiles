@@ -8,7 +8,7 @@ set $right l
 set $down j
 
 # Font
-font pango:Iosevka Aile SemiBold 11
+font pango:Iosevka Nerd Font Bold 11
 
 # Audio stuff 
 set $refresh_i3status killall -SIGUSR1 i3status
