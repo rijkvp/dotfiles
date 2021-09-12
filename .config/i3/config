@@ -172,7 +172,7 @@ bindsym $mod+o exec --no-startup-id rofi -show combi
 bindsym $mod+p exec --no-startup-id rofi -show run
 
 # Webbrowser: Brave 
-bindsym $mod+Shift+w exec firefo
+bindsym $mod+Shift+w exec firefox
 
 # Lock
 bindsym $mod+y exec blurlock
@@ -195,9 +195,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 
 # Programs
-exec_always nextcloud --background
-exec_always element-desktop --hidden
-exec_always veracrypt --background-task
+# exec_always nextcloud --background
+# exec_always element-desktop --hidden
+# exec_always veracrypt --background-task
 
 # Wallpaper
 exec_always feh --bg-fill ~/pics/wallpaper1.jpg
