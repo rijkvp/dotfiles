@@ -192,12 +192,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Desktop
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
-
-# Programs
-# exec_always nextcloud --background
-# exec_always element-desktop --hidden
-# exec_always veracrypt --background-task
 
 # Wallpaper
 exec_always feh --bg-fill ~/pics/wallpaper1.jpg
