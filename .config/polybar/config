@@ -1,39 +1,54 @@
 [colors]
-background = #5520252d
-background-alt = #4C566A
+background = #7720252d
+background-alt = #774C566A
+background-darker = #9920252d
+background-tray = #9920252d
+
 foreground = #fff
 foreground-alt = #ccc
 disabled = #aaa
 primary = #289bff
 focused = #58c8fc
 secondary = #00e595
-date = #00e595
 alert = #bd2c40
+
+mod-weather     = #9DCADF
+mod-network     = #9DCADF
+mod-audio       = #9DCADF
+mod-audio-mute  = #9DCADF
+mod-filesystem  = #9DCADF
+mod-memory      = #9DCADF
+mod-cpu         = #9DCADF
+mod-gpu         = #9DCADF
+mod-date        = #9DCADF
+mod-time        = #9DCADF
+mod-timestamp   = #9DCADF
 
 [bar/top]
 width = 100%
-height = 22
+height = 24
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #000000
 
-font-0 = Iosevka Nerd Font:style=Bold:size=12;2 # Modules 1
+font-0 = Iosevka Nerd Font:style=Bold:size=10;2 # Modules 1
 font-1 = Iosevka Nerd Font:style=Normal:size=12;2 # Window 2
-font-2 = Iosevka Nerd Font:style=Bold:size=12;2 # WM 3
+font-2 = Iosevka Nerd Font:style=Bold:size=13;2 # WM 3
 
-modules-left = i3 xwindow
-modules-center = 
-modules-right = networkspeed pulseaudio memory cpu temperature date powermenu
+modules-left = i3 xwindow 
 
-module-margin = 2
-fixed-center = false
+modules-center =
+fixed-center = true
+
+modules-right = weather networkspeed pulseaudio filesystem memory cpu gpu date time timestamp
+
+module-margin = 1 
 
 tray-position = right
-tray-padding = 2
-tray-background = #262b35 
+tray-padding = 4
+tray-background = ${colors.background-tray}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -42,6 +57,8 @@ cursor-scroll = ns-resize
 type = internal/xwindow
 label = %title:0:60:..%
 label-font = 2
+format-background = #8820252d
+format-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -82,98 +99,118 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 [module/cpu]
-type = internal/cpu
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/cpu.sh
 
-format-prefix = "龍  "
-label = CPU %percentage:2%%
+label = %output:11%
+format-prefix = "龍 "
+format-underline = ${colors.mod-cpu}
+format-foreground = ${colors.mod-cpu}
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
+[module/gpu]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/nvidia-smi.sh
 
-format = <label>
-format-warn = <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label = %output:9%
+format-prefix = " "
+format-underline = ${colors.mod-gpu}
+format-foreground = ${colors.mod-gpu}
 
 [module/memory]
 type = internal/memory
 interval = 1 
-format-prefix = "  "
+format-prefix = " "
 label = %gb_used:0:3%/%gb_total% 
+format-underline = ${colors.mod-memory}
+format-foreground = ${colors.mod-memory}
 
 [module/date]
 type = internal/date
 
 date = "%d-%m-%Y"
+format-prefix = " "
+label = %date%
+format-underline = ${colors.mod-date}
+format-foreground = ${colors.mod-date}
+
+[module/time]
+type = internal/date
+
 time = %H:%M:%S
-label = %date% %time%
+format-prefix = " "
+label = %time%
+format-underline = ${colors.mod-time}
+format-foreground = ${colors.mod-time}
+
+[module/timestamp]
+type = custom/script
+
+exec = echo $(date +%s) | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta'
+interval = 0.5
+format-prefix = "羽 "
+label = %output%
+format-underline = ${colors.mod-timestamp}
+format-foreground = ${colors.mod-timestamp}
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume-font = 1
-format-volume-prefix = "奔 "
+format-volume-prefix = "墳 "
 format-volume = <label-volume>
+format-volume-underline = ${colors.mod-audio}
+format-volume-foreground = ${colors.mod-audio}
 
 format-muted-font = 1
-format-muted-prefix = "婢 "
+format-muted-prefix = " "
 format-muted = MUTE
-format-muted-foreground = ${colors.disabled}
+format-muted-underline = ${colors.mod-audio-mute}
+format-muted-foreground = ${colors.mod-audio-mute}
 
 label-volume = %percentage%%     
-label-underline = ${colors.primary}
-
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 [module/networkspeed]
 type = internal/network
 interface = enp9s0
 interval = 0.5
-label-connected =  %upspeed:6%  %downspeed:6%
+label-connected =  %upspeed:8%  %downspeed:8%
 format-connected = <label-connected>
 label-disconnected = "DISCONNECTED"
 format-disconnected = <label-disconnected>
 label-disconnected-foreground = #f2463a
+format-connected-underline = ${colors.mod-network}
+format-connected-foreground = ${colors.mod-network}
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /home
+
+interval = 20
+
+format-mounted-prefix = " "
+label-mounted = %free:0:6% free
+format-mounted = <label-mounted>
+format-mounted-foreground = ${colors.mod-filesystem}
+format-mounted-underline = ${colors.mod-filesystem}
+
+[module/weather]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/weather.sh 
+interval = 300
+format-prefix = "  "
+label = %output%
+format-underline = ${colors.mod-weather}
+format-foreground = ${colors.mod-weather}
+
+
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = false
 
 [global/wm]
 margin-top = 0

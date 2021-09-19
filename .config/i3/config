@@ -171,7 +171,10 @@ bindsym $mod+o exec --no-startup-id rofi -show combi
 bindsym $mod+p exec --no-startup-id rofi -show run
 
 # Webbrowser: Brave 
-bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+w exec brave
+
+# Communication: Element (Matrix) client
+bindsym $mod+Shift+s exec element-desktop
 
 # Lock
 bindsym $mod+y exec slock

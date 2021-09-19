@@ -3,6 +3,11 @@ zstyle :compinstall filename '/home/rijkvp/.zshrc'
 autoload -Uz compinit
 compinit
 
+# Add to path
+export PATH=$HOME/.local/bin:$PATH
+
+
+
 ########## 
 # COLORS #
 ##########
@@ -13,9 +18,8 @@ compinit
 ###########
 # Aliases #
 ###########
-
-alias ls='ls -1 --color=auto'
-alias lsa='ls -1a --color=auto'
+alias ls='exa'
+alias lsa='exa -a'
 
 alias vim='nvim'
 alias v='nvim'
@@ -30,3 +34,5 @@ alias cfg='/usr/bin/git --git-dir=$HOME/repos/dotfiles --work-tree=$HOME'
 
 # Start Starship
 eval "$(starship init zsh)"
+
+neofetch
