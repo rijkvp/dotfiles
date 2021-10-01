@@ -12,17 +12,16 @@ focused = #58c8fc
 secondary = #00e595
 alert = #bd2c40
 
-mod-weather     = #9DCADF
-mod-network     = #9DCADF
-mod-audio       = #9DCADF
-mod-audio-mute  = #9DCADF
-mod-filesystem  = #9DCADF
-mod-memory      = #9DCADF
-mod-cpu         = #9DCADF
-mod-gpu         = #9DCADF
-mod-date        = #9DCADF
-mod-time        = #9DCADF
-mod-timestamp   = #9DCADF
+mod-weather     = #fff
+mod-network     = #fff
+mod-audio       = #fff
+mod-audio-mute  = #fff
+mod-filesystem  = #fff
+mod-memory      = #fff
+mod-cpu         = #fff
+mod-gpu         = #fff
+mod-date        = #fff
+mod-time        = #fff
 
 [bar/top]
 width = 100%
@@ -31,7 +30,7 @@ height = 24
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 0
 
 font-0 = Iosevka Nerd Font:style=Bold:size=10;2 # Modules 1
 font-1 = Iosevka Nerd Font:style=Normal:size=12;2 # Window 2
@@ -42,7 +41,10 @@ modules-left = i3 xwindow
 modules-center =
 fixed-center = true
 
-modules-right = weather networkspeed pulseaudio filesystem memory cpu gpu date time timestamp
+modules-right = weather networkspeed pulseaudio filesystem memory cpu gpu date time
+
+separator = "|"
+separator-foreground = #77ffffff
 
 module-margin = 1 
 
@@ -68,14 +70,14 @@ reverse-scroll = true
 index-sort = true
 
 ws-icon-0 = 1; 
-ws-icon-1 = 2;
-ws-icon-2 = 3; 
-ws-icon-3 = 4; 
-ws-icon-4 = 5; 
-ws-icon-5 = 6; 
-ws-icon-6 = 7; 
-ws-icon-7 = 8;X 
-ws-icon-8 = 9;Y 
+ws-icon-1 = 2; 
+ws-icon-2 = 3; 
+ws-icon-3 = 4; 
+ws-icon-4 = 5; 
+ws-icon-5 = 6;
+ws-icon-6 = 7;X 
+ws-icon-7 = 8;Y 
+ws-icon-8 = 9;Z 
 ws-icon-default =  
 
 format = <label-state> <label-mode>
@@ -103,7 +105,7 @@ type = custom/script
 interval = 1
 exec = ~/.config/polybar/scripts/cpu.sh
 
-label = %output:11%
+label = %output:10%
 format-prefix = "龍 "
 format-underline = ${colors.mod-cpu}
 format-foreground = ${colors.mod-cpu}
@@ -113,7 +115,7 @@ type = custom/script
 interval = 1
 exec = ~/.config/polybar/scripts/nvidia-smi.sh
 
-label = %output:9%
+label = %output:10%
 format-prefix = " "
 format-underline = ${colors.mod-gpu}
 format-foreground = ${colors.mod-gpu}
@@ -143,16 +145,6 @@ format-prefix = " "
 label = %time%
 format-underline = ${colors.mod-time}
 format-foreground = ${colors.mod-time}
-
-[module/timestamp]
-type = custom/script
-
-exec = echo $(date +%s) | sed ':a;s/\B[0-9]\{3\}\>/,&/;ta'
-interval = 0.5
-format-prefix = "羽 "
-label = %output%
-format-underline = ${colors.mod-timestamp}
-format-foreground = ${colors.mod-timestamp}
 
 [module/pulseaudio]
 type = internal/pulseaudio

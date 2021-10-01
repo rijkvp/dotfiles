@@ -192,15 +192,19 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # AUTO START #
 ##############
 
+# Startup
+exec_always --no-startup-id ~/scripts/startup.sh
+
 # Desktop
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Wallpaper
-exec_always feh --bg-fill ~/pics/wallpaper1.jpg
+exec_always feh --bg-fill ~/pics/wallpaper2.jpg
 
 ###########
 # i3 GAPS #
 ###########
 
-gaps inner 16
-gaps outer 0
+gaps inner 12
+gaps outer 12
+smart_gaps on
