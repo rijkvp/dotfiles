@@ -2,18 +2,44 @@
     background-color: rgba(0,0,0,0);
     color: #fff;
     font: "Iosevka Aile 13";
-    spacing: 3;
 }
 
-#scrollbar {
-    width:        0px ;
-    border:       0;
-    handle-width: 0px ;
-    padding:      0;
+window {
+    padding: 16px;
+    border-radius: 6px;
+    background-color: rgba(6,12,14,0.6);
 }
 
-#window {
-    padding: 8;
-    background-color: rgba(8,14,16,0.8);
-
+inputbar {
+    padding: 6px;
+    margin: 0px 0px 12px 0px;
+    border-radius: 4px;
+    background-color: rgba(6,12,14,0.8);
+    children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
+
+prompt {
+	text-color: #777;
+    str: "";
+}
+
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+	margin: 0 1ch 0 0;
+	text-color: #777;
+}
+
+element {
+	padding: 4px;
+}
+
+element normal {
+	background-color: transparent;
+}
+
+element selected {
+    border-radius: 6px;
+    background-color: rgba(6,12,14,0.9);
+}
+

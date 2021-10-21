@@ -8,7 +8,7 @@ set $right l
 set $down j
 
 # Font
-font pango:Iosevka Nerd Font Bold 11
+font pango:Overpass Nerd Font Bold 11
 
 # Audio stuff 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -167,19 +167,18 @@ client.background        $bg
 # Terminal emulator: Alacritty
 bindsym $mod+Return exec alacritty
 # Program launcher: dmenu 
-bindsym $mod+o exec --no-startup-id rofi -show combi
 bindsym $mod+p exec --no-startup-id rofi -show run
 
 # Webbrowser: Brave 
-bindsym $mod+Shift+w exec brave
+bindsym $mod+Shift+w exec firefox
 
 # Communication: Element (Matrix) client
 bindsym $mod+Shift+s exec element-desktop
 
 # Lock
-bindsym $mod+y exec slock
+bindsym $mod+y exec blurlock 
 # Lock & suspend
-bindsym $mod+Shift+y exec systemctl suspend 
+bindsym $mod+Shift+y exec blurlock && systemctl suspend 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -192,19 +191,27 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # AUTO START #
 ##############
 
-# Startup
+# Startup script
 exec_always --no-startup-id ~/scripts/startup.sh
 
-# Desktop
+# Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# Wallpaper
-exec_always feh --bg-fill ~/pics/wallpaper2.jpg
 
 ###########
 # i3 GAPS #
 ###########
 
-gaps inner 12
-gaps outer 12
+set $gap_width 12
+
 smart_gaps on
+gaps inner $gap_width
+gaps outer -4
+
+bindsym $mod+u exec --no-startup-id "if [ $(i3-msg -t get_tree | jq -r \
+    'recurse(.nodes[]) | if .type == \\"workspace\\" and .name == \\"'`i3-msg \
+    -t get_workspaces | jq -r '.[] | if .[\\"focused\\"] then .[\\"name\\"] else \
+    empty end'`'\\" then .gaps.inner else empty end') -eq 0 ]; \
+    then \
+        i3-msg gaps inner current set 0; \
+    else \
+        i3-msg gaps inner current set $gap_width; fi"

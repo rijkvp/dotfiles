@@ -8,14 +8,18 @@ foreground = #fff
 foreground-alt = #ccc
 disabled = #aaa
 primary = #289bff
-focused = #58c8fc
 secondary = #00e595
-alert = #bd2c40
+
+focused = #58c8fc
+unfocused = #0c3838
+
+alert = #77281c
 
 mod-weather     = #fff
 mod-network     = #fff
+mod-network-dis = #aaa
 mod-audio       = #fff
-mod-audio-mute  = #fff
+mod-audio-mute  = #aaa
 mod-filesystem  = #fff
 mod-memory      = #fff
 mod-cpu         = #fff
@@ -23,23 +27,23 @@ mod-gpu         = #fff
 mod-date        = #fff
 mod-time        = #fff
 
-[bar/top]
+[bar/root]
 width = 100%
 height = 24
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 3
 
-font-0 = Iosevka Nerd Font:style=Bold:size=10;2 # Modules 1
-font-1 = Iosevka Nerd Font:style=Normal:size=12;2 # Window 2
-font-2 = Iosevka Nerd Font:style=Bold:size=13;2 # WM 3
+font-0 = Fira Code Nerd Font:style=Bold:size=9;3 # Modules 1
+font-1 = Overpass Nerd Font:style=Bold:size=12;2 # Window 2
+font-2 = Overpass Nerd Font:style=Normal:size=11;2 # WM 3
 
-modules-left = i3 xwindow 
+modules-left = i3
 
-modules-center =
-fixed-center = true
+modules-center = xwindow
+fixed-center = false
 
 modules-right = weather networkspeed pulseaudio filesystem memory cpu gpu date time
 
@@ -54,13 +58,14 @@ tray-background = ${colors.background-tray}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:60:..%
+label = %title:0:50:..%
 label-font = 2
 format-background = #8820252d
-format-padding = 2
+format-padding = 4 
 
 [module/i3]
 type = internal/i3
@@ -83,31 +88,28 @@ ws-icon-default = 
 format = <label-state> <label-mode>
 format-font = 3
 
-label-mode-background = ${colors.primary}
-
-label-focused = %icon%
+label-focused = %index%.  %icon%
 label-focused-background = ${colors.background-alt}
 label-focused-underline = ${colors.focused}
-label-focused-padding = 2
+label-focused-padding = 3
 
-label-unfocused = %icon%
-label-unfocused-padding = 2
+label-unfocused = %index%.  %icon% 
+label-unfocused-padding = 3
 
-label-visible = %icon%
-label-visible-padding = 2
+label-visible = %index%.  %icon% 
+label-visible-padding = 3
 
-label-urgent = %icon%
+label-urgent = %index%.  %icon% 
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 3
 
 [module/cpu]
 type = custom/script
 interval = 1
 exec = ~/.config/polybar/scripts/cpu.sh
 
-label = %output:10%
+label = %output:9%
 format-prefix = "龍 "
-format-underline = ${colors.mod-cpu}
 format-foreground = ${colors.mod-cpu}
 
 [module/gpu]
@@ -115,9 +117,8 @@ type = custom/script
 interval = 1
 exec = ~/.config/polybar/scripts/nvidia-smi.sh
 
-label = %output:10%
+label = %output:9%
 format-prefix = " "
-format-underline = ${colors.mod-gpu}
 format-foreground = ${colors.mod-gpu}
 
 [module/memory]
@@ -125,7 +126,6 @@ type = internal/memory
 interval = 1 
 format-prefix = " "
 label = %gb_used:0:3%/%gb_total% 
-format-underline = ${colors.mod-memory}
 format-foreground = ${colors.mod-memory}
 
 [module/date]
@@ -134,7 +134,6 @@ type = internal/date
 date = "%d-%m-%Y"
 format-prefix = " "
 label = %date%
-format-underline = ${colors.mod-date}
 format-foreground = ${colors.mod-date}
 
 [module/time]
@@ -143,7 +142,6 @@ type = internal/date
 time = %H:%M:%S
 format-prefix = " "
 label = %time%
-format-underline = ${colors.mod-time}
 format-foreground = ${colors.mod-time}
 
 [module/pulseaudio]
@@ -152,13 +150,11 @@ type = internal/pulseaudio
 format-volume-font = 1
 format-volume-prefix = "墳 "
 format-volume = <label-volume>
-format-volume-underline = ${colors.mod-audio}
 format-volume-foreground = ${colors.mod-audio}
 
 format-muted-font = 1
 format-muted-prefix = " "
 format-muted = MUTE
-format-muted-underline = ${colors.mod-audio-mute}
 format-muted-foreground = ${colors.mod-audio-mute}
 
 label-volume = %percentage%%     
@@ -168,12 +164,11 @@ label-volume = %percentage%%
 type = internal/network
 interface = enp9s0
 interval = 0.5
-label-connected =  %upspeed:8%  %downspeed:8%
+label-connected =  %upspeed:6%  %downspeed:6%
 format-connected = <label-connected>
-label-disconnected = "DISCONNECTED"
+label-disconnected = "NOPE :)"
 format-disconnected = <label-disconnected>
-label-disconnected-foreground = #f2463a
-format-connected-underline = ${colors.mod-network}
+label-disconnected-foreground = ${colors.mod-network-dis}
 format-connected-foreground = ${colors.mod-network}
 
 [module/filesystem]
@@ -187,7 +182,6 @@ format-mounted-prefix = " "
 label-mounted = %free:0:6% free
 format-mounted = <label-mounted>
 format-mounted-foreground = ${colors.mod-filesystem}
-format-mounted-underline = ${colors.mod-filesystem}
 
 [module/weather]
 type = custom/script
@@ -196,10 +190,7 @@ exec = ~/.config/polybar/scripts/weather.sh
 interval = 300
 format-prefix = "  "
 label = %output%
-format-underline = ${colors.mod-weather}
 format-foreground = ${colors.mod-weather}
-
-
 
 [settings]
 screenchange-reload = true

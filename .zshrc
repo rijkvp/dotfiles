@@ -12,21 +12,19 @@ source ~/scripts/goto.sh
 # COLORS #
 ##########
 
-# TODO
-
 
 ###########
 # Aliases #
 ###########
-alias ls='exa'
-alias lsa='exa -a'
+alias ls='exa --icons -1'
+alias lsa='exa --icons -1 -la'
 
 alias vim='nvim'
 alias v='nvim'
 
 alias s='systemctl'
 
-# Gitk
+# Git
 alias gitcom='git add -A && git commit -a -m'
 
 # Bare dotfiles git repo
@@ -37,4 +35,3 @@ alias g='goto'
 # Start Starship
 eval "$(starship init zsh)"
 
-neofetch
