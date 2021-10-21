@@ -166,14 +166,18 @@ client.background        $bg
 
 # Terminal emulator: Alacritty
 bindsym $mod+Return exec alacritty
-# Program launcher: dmenu 
+
+# Program launcher: Rofi 
 bindsym $mod+p exec --no-startup-id rofi -show run
 
-# Webbrowser: Brave 
-bindsym $mod+Shift+w exec firefox
+# Screenshot: flameshot
+bindsym $mod+Shift+s exec flameshot gui
 
-# Communication: Element (Matrix) client
-bindsym $mod+Shift+s exec element-desktop
+
+# Launch programs
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+f exec nemo
+bindsym $mod+Shift+i exec element-desktop
 
 # Lock
 bindsym $mod+y exec blurlock 
