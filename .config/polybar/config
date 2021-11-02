@@ -1,53 +1,47 @@
 [colors]
-background = #7720252d
-background-alt = #774C566A
-background-darker = #9920252d
-background-tray = #9920252d
+background = #1e2127
+background-alt = #5c6370
+background-darker = #9907090c
+background-tray = #9907090c
 
-foreground = #fff
-foreground-alt = #ccc
+foreground = #c7cfdd
+
 disabled = #aaa
-primary = #289bff
-secondary = #00e595
+urgent = #77281c
 
-focused = #58c8fc
-unfocused = #0c3838
-
-alert = #77281c
-
-mod-weather     = #fff
-mod-network     = #fff
+mod-weather     = #c7cfdd
+mod-network     = #c7cfdd
 mod-network-dis = #aaa
-mod-audio       = #fff
+mod-audio       = #c7cfdd
 mod-audio-mute  = #aaa
-mod-filesystem  = #fff
-mod-memory      = #fff
-mod-cpu         = #fff
-mod-gpu         = #fff
-mod-date        = #fff
-mod-time        = #fff
+mod-filesystem  = #c7cfdd
+mod-memory      = #c7cfdd 
+mod-cpu         = #c7cfdd
+mod-gpu         = #c7cfdd
+mod-date        = #c7cfdd
+mod-time        = #c7cfdd
 
 [bar/root]
 width = 100%
-height = 24
+height = 18
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
 
-font-0 = Fira Code Nerd Font:style=Bold:size=9;3 # Modules 1
+font-0 = Fira Code Nerd Font:style=Medium:size=10;1 # Modules 1
 font-1 = Overpass Nerd Font:style=Bold:size=12;2 # Window 2
-font-2 = Overpass Nerd Font:style=Normal:size=11;2 # WM 3
+font-2 = Overpass Nerd Font:style=Bold:size=11;2 # WM 3
 
 modules-left = i3
 
 modules-center = xwindow
 fixed-center = false
 
-modules-right = weather networkspeed pulseaudio filesystem memory cpu gpu date time
+modules-right = weather pulseaudio memory cpu date time
 
-separator = "|"
+separator = " "
 separator-foreground = #77ffffff
 
 module-margin = 1 
@@ -74,34 +68,22 @@ pin-workspaces = true
 reverse-scroll = true
 index-sort = true
 
-ws-icon-0 = 1; 
-ws-icon-1 = 2; 
-ws-icon-2 = 3; 
-ws-icon-3 = 4; 
-ws-icon-4 = 5; 
-ws-icon-5 = 6;
-ws-icon-6 = 7;X 
-ws-icon-7 = 8;Y 
-ws-icon-8 = 9;Z 
-ws-icon-default =  
-
 format = <label-state> <label-mode>
 format-font = 3
 
-label-focused = %index%.  %icon%
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.focused}
-label-focused-padding = 3
+label-focused-padding = 4
 
-label-unfocused = %index%.  %icon% 
-label-unfocused-padding = 3
+label-unfocused = %index% 
+label-unfocused-padding = 4
 
-label-visible = %index%.  %icon% 
-label-visible-padding = 3
+label-visible = %index% 
+label-visible-padding = 4
 
-label-urgent = %index%.  %icon% 
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 3
+label-urgent = %index% 
+label-urgent-background = ${colors.urgent}
+label-urgent-padding = 4
 
 [module/cpu]
 type = custom/script

@@ -4,9 +4,9 @@ autoload -Uz compinit
 compinit
 
 # Add to path
-export PATH=$HOME/.local/bin:$PATH
-
 source ~/scripts/goto.sh
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/scripts:$PATH
 
 ########## 
 # COLORS #

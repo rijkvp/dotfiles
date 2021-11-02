@@ -1365,4 +1365,4 @@ schemes:
       white:   '0xffffff'
   
 # Set theme here
-colors: *ayu_dark
+colors: *one_dark

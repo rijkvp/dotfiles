@@ -5,8 +5,7 @@ set $mod Mod4
 set $left h  
 set $up k
 set $right l
-set $down j
-
+set $down j 
 # Font
 font pango:Overpass Nerd Font Bold 11
 
@@ -175,7 +174,7 @@ bindsym $mod+Shift+s exec flameshot gui
 
 
 # Launch programs
-bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+w exec brave
 bindsym $mod+Shift+f exec nemo
 bindsym $mod+Shift+i exec element-desktop
 
@@ -190,6 +189,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Wallpaper
+bindsym $mod+Shift+v exec ~/scripts/random_wallpaper.sh
 
 ##############
 # AUTO START #
