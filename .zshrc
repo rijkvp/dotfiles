@@ -19,8 +19,11 @@ export PATH=$HOME/scripts:$PATH
 alias ls='exa --icons -1'
 alias lsa='exa --icons -1 -la'
 
+# Use Neovim
 alias vim='nvim'
+alias vi='nvim'
 alias v='nvim'
+alias sv='sudo nvim'
 
 alias s='systemctl'
 

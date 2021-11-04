@@ -7,7 +7,7 @@ set $up k
 set $right l
 set $down j 
 # Font
-font pango:Overpass Nerd Font Bold 11
+font pango:FiraCode Nerd Font Medium 11
 
 # Audio stuff 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -197,9 +197,6 @@ bindsym $mod+Shift+v exec ~/scripts/random_wallpaper.sh
 # AUTO START #
 ##############
 
-# Startup script
-exec_always --no-startup-id ~/scripts/startup.sh
-
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -207,17 +204,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # i3 GAPS #
 ###########
 
-set $gap_width 12
+set $gap_width 26 
 
 smart_gaps on
 gaps inner $gap_width
 gaps outer -4
-
-bindsym $mod+u exec --no-startup-id "if [ $(i3-msg -t get_tree | jq -r \
-    'recurse(.nodes[]) | if .type == \\"workspace\\" and .name == \\"'`i3-msg \
-    -t get_workspaces | jq -r '.[] | if .[\\"focused\\"] then .[\\"name\\"] else \
-    empty end'`'\\" then .gaps.inner else empty end') -eq 0 ]; \
-    then \
-        i3-msg gaps inner current set 0; \
-    else \
-        i3-msg gaps inner current set $gap_width; fi"

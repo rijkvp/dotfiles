@@ -1,8 +1,8 @@
 [colors]
-background = #1e2127
-background-alt = #5c6370
-background-darker = #9907090c
-background-tray = #9907090c
+background = #aa000000
+background-alt = #aa333333
+background-darker = #aa111111
+background-tray = #aa000000
 
 foreground = #c7cfdd
 
@@ -14,10 +14,12 @@ mod-network     = #c7cfdd
 mod-network-dis = #aaa
 mod-audio       = #c7cfdd
 mod-audio-mute  = #aaa
+
 mod-filesystem  = #c7cfdd
-mod-memory      = #c7cfdd 
 mod-cpu         = #c7cfdd
 mod-gpu         = #c7cfdd
+mod-memory      = #c7cfdd 
+
 mod-date        = #c7cfdd
 mod-time        = #c7cfdd
 
@@ -30,24 +32,28 @@ foreground = ${colors.foreground}
 
 line-size = 3
 
-font-0 = Fira Code Nerd Font:style=Medium:size=10;1 # Modules 1
-font-1 = Overpass Nerd Font:style=Bold:size=12;2 # Window 2
-font-2 = Overpass Nerd Font:style=Bold:size=11;2 # WM 3
+# AUR Package: https://aur.archlinux.org/packages/nerd-fonts-ibm-plex-mono/
+font-0 = BlexMono Nerd Font:style=SemiBold:size=10;2 # Modules 1
+font-1 = IBM Plex Mono:style=Bold:size=12;2 # Window 2
+font-2 = IBM Plex Mono:style=Bold:size=12;2 # WM 3 - Focused
+font-3 = IBM Plex Mono:style=Light:size=12;2 # WM 4 - Unfocused
 
 modules-left = i3
-
 modules-center = xwindow
+modules-right = weather pulseaudio cpu gpu memory date time
+
 fixed-center = false
-
-modules-right = weather pulseaudio memory cpu date time
-
-separator = " "
-separator-foreground = #77ffffff
-
 module-margin = 1 
 
+separator = "|"
+separator-foreground = #aaaaaaaa
+
+
+wm-restack = true
+
 tray-position = right
-tray-padding = 4
+tray-maxsize = 16
+tray-padding = 6
 tray-background = ${colors.background-tray}
 
 cursor-click = pointer
@@ -71,19 +77,21 @@ index-sort = true
 format = <label-state> <label-mode>
 format-font = 3
 
-label-focused = %index%
+label-focused = [%index%]
 label-focused-background = ${colors.background-alt}
-label-focused-padding = 4
+label-focused-padding = 1
+label-focused-font = 3
 
-label-unfocused = %index% 
-label-unfocused-padding = 4
+label-unfocused = [%index%]
+label-unfocused-padding = 1
+label-unfocused-font = 4
 
-label-visible = %index% 
-label-visible-padding = 4
+label-visible = [%index%]
+label-visible-padding = 1
 
-label-urgent = %index% 
+label-urgent = [%index%]
 label-urgent-background = ${colors.urgent}
-label-urgent-padding = 4
+label-urgent-padding = 1
 
 [module/cpu]
 type = custom/script
