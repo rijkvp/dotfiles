@@ -34,7 +34,7 @@ line-size = 3
 
 # AUR Package: https://aur.archlinux.org/packages/nerd-fonts-ibm-plex-mono/
 font-0 = BlexMono Nerd Font:style=SemiBold:size=10;2 # Modules 1
-font-1 = IBM Plex Mono:style=Bold:size=12;2 # Window 2
+font-1 = IBM Plex Mono:style=Medium:size=12;2 # Window 2
 font-2 = IBM Plex Mono:style=Bold:size=12;2 # WM 3 - Focused
 font-3 = IBM Plex Mono:style=Light:size=12;2 # WM 4 - Unfocused
 
@@ -42,7 +42,7 @@ modules-left = i3
 modules-center = xwindow
 modules-right = weather pulseaudio cpu gpu memory date time
 
-fixed-center = false
+fixed-center = true
 module-margin = 1 
 
 separator = "|"
@@ -64,8 +64,8 @@ enable-ipc = true
 type = internal/xwindow
 label = %title:0:50:..%
 label-font = 2
-format-background = #8820252d
-format-padding = 4 
+format-background = ${colors.background-darker}
+format-padding = 5 
 
 [module/i3]
 type = internal/i3
