@@ -1,5 +1,5 @@
 # Modifier key 
-set $mod Mod4
+set $mod Mod1
 
 # Vim-keys
 set $left h  
@@ -164,7 +164,7 @@ client.background        $bg
 #############
 
 # Terminal emulator: Alacritty
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # Program launcher: Rofi 
 bindsym $mod+p exec --no-startup-id rofi -show run

@@ -49,8 +49,6 @@ separator = "|"
 separator-foreground = #aaaaaaaa
 
 
-wm-restack = true
-
 tray-position = right
 tray-maxsize = 16
 tray-padding = 6
@@ -77,21 +75,21 @@ index-sort = true
 format = <label-state> <label-mode>
 format-font = 3
 
-label-focused = [%index%]
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-padding = 1
+label-focused-padding = 2
 label-focused-font = 3
 
-label-unfocused = [%index%]
-label-unfocused-padding = 1
+label-unfocused = %index%
+label-unfocused-padding = 2
 label-unfocused-font = 4
 
-label-visible = [%index%]
-label-visible-padding = 1
+label-visible = %index%
+label-visible-padding = 2
 
-label-urgent = [%index%]
+label-urgent = %index%
 label-urgent-background = ${colors.urgent}
-label-urgent-padding = 1
+label-urgent-padding = 2
 
 [module/cpu]
 type = custom/script
