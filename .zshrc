@@ -4,9 +4,9 @@ autoload -Uz compinit
 compinit
 
 # Add to path
-source ~/scripts/goto.sh
+source ~/dev/scripts/goto.sh
 export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/scripts:$PATH
+export PATH=$HOME/dev/scripts:$PATH
 
 ########## 
 # COLORS #
@@ -26,15 +26,21 @@ alias v='nvim'
 alias sv='sudo nvim'
 
 alias s='systemctl'
+alias todo='v ~/docs/notes/todo.md'
 
 # Git
 alias gitcom='git add -A && git commit -a -m'
 
 # Bare dotfiles git repo
-alias cfg='/usr/bin/git --git-dir=$HOME/repos/dotfiles --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/dev/projects/dotfiles --work-tree=$HOME'
 
 alias g='goto'
 
 # Start Starship
 eval "$(starship init zsh)"
 
+# VI Mode
+set -o vi
+
+
+source /home/rijkvp/.config/broot/launcher/bash/br

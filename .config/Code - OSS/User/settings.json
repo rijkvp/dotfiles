@@ -1,0 +1,85 @@
+{
+  "telemetry.telemetryLevel": "off",
+  // Theme
+  "workbench.colorTheme": "Dracula",
+  "workbench.productIconTheme": "icons-carbon",
+  "git.autofetch": true,
+  "rust-analyzer.inlayHints.enable": false,
+  "git.enableSmartCommit": true,
+  "editor.fontSize": 13,
+  "editor.bracketPairColorization.enabled": true,
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+  },
+  "debug.console.fontSize": 12,
+  "terminal.integrated.fontSize": 13,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  // Vim
+  "keyboard.dispatch": "keyCode", // Fixes keymaps
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<space>"],
+      "commands": ["workbench.action.files.save"]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  // Status bar colors
+  "vim.statusBarColorControl": false,
+  "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
+  "vim.statusBarColors.insert": ["#BF616A", "#000"],
+  "vim.statusBarColors.visual": ["#B48EAD", "#000"],
+  "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
+  "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
+  "vim.statusBarColors.replace": "#D08770",
+  "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  "vim.statusBarColors.easymotionmode": "#007ACC",
+  "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  "vim.statusBarColors.surroundinputmode": "#007ACC",
+  // Editor settings
+  "editor.renderWhitespace": "none",
+  // Minimal UI
+  "window.zoomLevel": 0.9,
+  "editor.minimap.enabled": false,
+  "redhat.telemetry.enabled": false,
+  "workbench.startupEditor": "none",
+  "window.menuBarVisibility": "toggle",
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": false,
+  // Auto
+}

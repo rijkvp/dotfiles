@@ -1,3 +1,7 @@
+#############
+# SHORTCUTS #
+#############
+
 # Modifier key 
 set $mod Mod1
 
@@ -6,15 +10,35 @@ set $left h
 set $up k
 set $right l
 set $down j 
-# Font
-font pango:FiraCode Nerd Font Bold 10
 
-# Audio stuff 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym $mod+n exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
-bindsym $mod+b exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
-bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym $mod+Shift+m exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# Rofi
+bindsym $mod+p exec rofi -show run
+bindsym $mod+Tab exec rofi -show window
+
+# Quick open shortcuts
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+w exec firefox
+bindsym $mod+Shift+f exec nemo
+bindsym $mod+Shift+m exec thunderbird
+bindsym $mod+Shift+d exec discord
+
+# Lock
+bindsym $mod+u exec blurlock 
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit window manager?' -B 'YES' 'i3-msg exit'"
+
+# Wallpaper
+bindsym $mod+Shift+v exec ~/dev/scripts/random_wallpaper.sh
+
+# Audio control 
+bindsym $mod+n exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym $mod+b exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2%
+bindsym $mod+m exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #####################
 # WINDOW MANAGEMENT #
@@ -116,20 +140,33 @@ bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
-# Resize windows
-set $resize_factor 2 
-bindsym $mod+r mode "resize"
+# Application workspaces
+# Browsers on 1
+assign [class="firefox"] $ws1
+assign [class="qutebrowser"] $ws1
+assign [class="LibreWolf"] $ws1
+assign [class="Brave-browser"] $ws1
+# Coding on 2
+assign [class="code-oss"] $ws2
+# Communication on 3
+assign [class="Thunderbird"] $ws3
+assign [class="discord"] $ws3
+assign [class="Element"] $ws3
+# Games on 4
+assign [class="Steam"] $ws4
+assign [class="Lutris"] $ws4
+assign [class="Minecraft Launcher"] $ws4
 
-mode "resize" {
-        bindsym $right resize shrink width $resize_factor px or $resize_factor ppt
-        bindsym $left resize grow width $resize_factor px or $resize_factor ppt 
-        bindsym $up resize shrink height $resize_factor px or $resize_factor ppt
-        bindsym $down resize grow height $resize_factor px or $resize_factor ppt
-        # Alternative: arrow keys
-        bindsym Right resize shrink width $resize_factor px or $resize_factor ppt
-        bindsym Left resize grow width $resize_factor px or $resize_factor ppt 
-        bindsym Up resize shrink height $resize_factor px or $resize_factor ppt
-        bindsym Down resize grow height $resize_factor px or $resize_factor ppt
+# Resize windows
+set $resize_factor 5
+bindsym $mod+r mode "RESIZE"
+
+mode "RESIZE" {
+        bindsym $right resize grow width $resize_factor px or $resize_factor ppt 
+        bindsym $left resize shrink width $resize_factor px or $resize_factor ppt
+
+        bindsym $up resize grow height $resize_factor px or $resize_factor ppt
+        bindsym $down resize shrink height $resize_factor px or $resize_factor ppt
 
         # Toggle mode back
         bindsym Return mode "default"
@@ -142,56 +179,25 @@ mode "resize" {
 # APPEARANCE #
 ##############
 
-default_border none 
-default_floating_border none
+# Font
+font pango:Roboto Mono Nerd Font Bold 10
+
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders none
 title_align center
-hide_edge_borders both
 
-set $bg #101010
-set $bg-alt #222222
-set $fg #c7cfdd
+# Theme: Dracula
+# Copy & paste here to change theme
 
-# class                     border  backgr. text    indicator child_border
-client.focused              $bg-alt $bg-alt $fg $primary $bg-alt 
-client.focused_inactive     $bg $bg     $fg $bg $bg 
-client.unfocused            $bg $bg     $fg $bg $bg 
-client.urgent               $bg $bg     $fg $bg $bg 
-client.placeholder          $bg $bg     $fg $bg $bg $bg 
-client.background        $bg   
+# class                 border  backgr. text    indicator child_border
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
 
-#############
-# SHORTCUTS #
-#############
-
-# Terminal emulator: Alacritty
-bindsym $mod+Return exec kitty
-
-# Program launcher: Rofi 
-bindsym $mod+p exec --no-startup-id rofi -show run
-
-# Screenshot: flameshot
-bindsym $mod+Shift+s exec flameshot gui
-
-
-# Launch programs
-bindsym $mod+Shift+w exec brave
-bindsym $mod+Shift+f exec nemo
-bindsym $mod+Shift+i exec element-desktop
-
-# Lock
-bindsym $mod+y exec blurlock 
-# Lock & suspend
-bindsym $mod+Shift+y exec blurlock && systemctl suspend 
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# Wallpaper
-bindsym $mod+Shift+v exec ~/scripts/random_wallpaper.sh
 
 ##############
 # AUTO START #
@@ -204,8 +210,11 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # i3 GAPS #
 ###########
 
-set $gap_width 26 
+set $gap_width 20 
+set $gap_width_outer -5
 
-smart_gaps on
 gaps inner $gap_width
-gaps outer -4
+gaps outer $gap_width_outer
+
+#smart_gaps on
+#smart_borders on
