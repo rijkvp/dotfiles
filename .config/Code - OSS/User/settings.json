@@ -80,6 +80,5 @@
   "workbench.startupEditor": "none",
   "window.menuBarVisibility": "toggle",
   "workbench.statusBar.visible": false,
-  "workbench.activityBar.visible": false,
   // Auto
 }
