@@ -14,16 +14,15 @@ set $down j
 # Rofi
 bindsym $mod+p exec rofi -show run
 bindsym $mod+Tab exec rofi -show window
+bindsym $mod+y exec rofi -show p -modi p:~/.config/rofi/rofi-power-menu.sh
 
 # Quick open shortcuts
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+w exec firefox
 bindsym $mod+Shift+f exec nemo
+bindsym $mod+Shift+u exec rssguard
 bindsym $mod+Shift+m exec thunderbird
 bindsym $mod+Shift+d exec discord
-
-# Lock
-bindsym $mod+u exec blurlock 
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -33,7 +32,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit window manager?' -B 'YES' 'i3-msg exit'"
 
 # Wallpaper
-bindsym $mod+Shift+v exec ~/dev/scripts/random_wallpaper.sh
+bindsym $mod+Shift+v exec ~/scripts/random_wallpaper.sh
 
 # Audio control 
 bindsym $mod+n exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2%
@@ -152,10 +151,13 @@ assign [class="code-oss"] $ws2
 assign [class="Thunderbird"] $ws3
 assign [class="discord"] $ws3
 assign [class="Element"] $ws3
-# Games on 4
+# Game launchers on 4
 assign [class="Steam"] $ws4
 assign [class="Lutris"] $ws4
 assign [class="Minecraft Launcher"] $ws4
+# Games on 5
+# VMs on 6
+assign [class="VirtualBox Manager"] $ws6
 
 # Resize windows
 set $resize_factor 5
