@@ -114,5 +114,15 @@
   {
     "key": "ctrl+shift+b",
     "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus"
+  },
+  {
+    "key": "alt+f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus"
   }
 ]

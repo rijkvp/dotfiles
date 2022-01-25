@@ -28,6 +28,8 @@ alias sv='sudo nvim'
 alias s='systemctl'
 alias todo='v ~/docs/notes/todo.md'
 
+alias code='vscodium'
+
 # Git
 alias gitcom='git add -A && git commit -a -m'
 
