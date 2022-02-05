@@ -44,4 +44,3 @@ eval "$(starship init zsh)"
 # VI Mode
 set -o vi
 
-source /home/rijkvp/.config/broot/launcher/bash/br
