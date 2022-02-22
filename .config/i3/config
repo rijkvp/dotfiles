@@ -12,14 +12,14 @@ set $right l
 set $down j 
 
 # Rofi
-bindsym $mod+p exec rofi -show run
+bindsym $mod+p exec rofi -show drun
 bindsym $mod+Tab exec rofi -show window
-bindsym $mod+y exec rofi -show p -modi p:~/.config/rofi/rofi-power-menu.sh
 
 # Quick open shortcuts
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+w exec firefox
-bindsym $mod+Shift+f exec nemo
+bindsym $mod+Shift+a exec vscodium
+bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+Shift+u exec rssguard
 bindsym $mod+Shift+m exec thunderbird
 bindsym $mod+Shift+d exec discord
@@ -94,6 +94,8 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+d focus child
 
+bindsym $mod+Shift+b border toggle
+
 
 ##############
 # WORKSPACES #
@@ -142,8 +144,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Application workspaces
 # Browsers on 1
 assign [class="firefox"] $ws1
-assign [class="qutebrowser"] $ws1
-assign [class="LibreWolf"] $ws1
 assign [class="Brave-browser"] $ws1
 # Coding on 2
 assign [class="code-oss"] $ws2
@@ -212,11 +212,11 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 # i3 GAPS #
 ###########
 
-set $gap_width 20 
-set $gap_width_outer -5
+set $gap_width 8 
+set $gap_width_outer 0
 
 gaps inner $gap_width
 gaps outer $gap_width_outer
 
-#smart_gaps on
-#smart_borders on
+smart_gaps on
+smart_borders on

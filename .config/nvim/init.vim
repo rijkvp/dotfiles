@@ -11,3 +11,11 @@ set expandtab
 " Copy/paste
 set autoindent smartindent
 set clipboard+=unnamedplus
+
+
+" Plugins using vim-plug: https://github.com/junegunn/vim-plug
+call plug#begin()
+
+Plug 'ixru/nvim-markdown'
+
+call plug#end()
