@@ -4,19 +4,13 @@ autoload -Uz compinit
 compinit
 
 # Add to path
-source ~/scripts/goto.sh
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/scripts:$PATH
-export PATH=$HOME/repos/flutter/bin:$PATH
-
-########## 
-# COLORS #
-##########
-
 
 ###########
 # Aliases #
 ###########
+
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -50,6 +44,9 @@ alias qcom='git add -A && git commit -a -m' # Quick Commit
 alias push='git push'
 # Bare dotfiles git repo
 alias cfg='/usr/bin/git --git-dir=$HOME/repos/dotfiles --work-tree=$HOME'
+
+
+
 
 # Start Starship
 eval "$(starship init zsh)"
