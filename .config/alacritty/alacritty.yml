@@ -13,31 +13,34 @@ scrolling:
 
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: Iosevka Nerd Font
     style: Regular 
   bold:
-    family: FiraCode Nerd Font
-    style: Bold 
-  size: 11.0
+    family: Iosevka Nerd Font
+    style: Bold
+  size: 12.0
 
 cursor:
   style:
     shape: Beam
 
   thickness: 0.16
+      
+bell:
+  duration: 50 
+  color: '#ff9999'
 
 key_bindings:
-  
   # Copy/paste with CRTL+Shift or Alt
-  - { key: V,         mods: Control|Shift, action: Paste                       }
-  - { key: V,         mods: Alt,           action: Paste                       }
-  - { key: C,         mods: Control|Shift, action: Copy                        }
-  - { key: C,         mods: Alt,           action: Copy                        }
+  - { key: V,         mods: Control|Shift, action: Paste           }
+  - { key: V,         mods: Alt,           action: Paste           }
+  - { key: C,         mods: Control|Shift, action: Copy            }
+  - { key: C,         mods: Alt,           action: Copy            }
   # Zooming
-  - { key: Key0,      mods: Control,       action: ResetFontSize               }
-  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
+  - { key: Key0,      mods: Control,       action: ResetFontSize   }
+  - { key: Equals,    mods: Control,       action: IncreaseFontSize}
+  - { key: Plus,      mods: Control,       action: IncreaseFontSize}
+  - { key: Minus,     mods: Control,       action: DecreaseFontSize}
 
 
 # Themes from: https://github.com/eendroroy/alacritty-theme
@@ -1364,4 +1367,4 @@ schemes:
       white:   '0xffffff'
   
 # Set theme here
-colors: *dracula
+colors: *one_dark

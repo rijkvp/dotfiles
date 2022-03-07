@@ -3,7 +3,7 @@
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
   // Theme
-  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.productIconTheme": "icons-carbon",
   "git.autofetch": true,
   "rust-analyzer.inlayHints.enable": false,
@@ -79,7 +79,7 @@
   "editor.lineNumbers": "relative",
   "editor.fontFamily": "'FiraCode Nerd Font', serif",
   "editor.fontSize": 12,
-  "workbench.activityBar.visible": false,
   "window.zoomLevel": 1,
+  "workbench.statusBar.visible": false,
   // Auto
 }
