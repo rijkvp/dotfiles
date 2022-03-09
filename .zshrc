@@ -33,6 +33,8 @@ alias fm='ranger'
 alias gfm='pcmanfm'
 # VSCodium -> VSCode
 alias code='vscodium'
+# Newsboat
+alias nb='newsboat'
 # Package mangement
 alias pacup="sudo pacman -Syu"
 alias pacs="pacman -Ss"
