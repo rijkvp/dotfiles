@@ -4,22 +4,21 @@ workspaces = []
 tags = ["web", "dev", "comm", "csume", "game", "write", "gfx", "bg"]
 
 layouts = [
-#    "MainAndVertStack", 
-#    "MainAndHorizontalStack", 
-#    "MainAndDeck", 
-#    "GridHorizontal", 
-#    "EvenHorizontal", 
+#    "MainAndVertStack",
+    "MainAndHorizontalStack",
+#    "MainAndDeck",
+#    "GridHorizontal",
+#    "EvenHorizontal",
 #    "EvenVertical",
-    "Fibonacci", 
-    "CenterMain", 
-#    "CenterMainBalanced", 
-    "Monocle", 
-#    "RightWiderLeftStack", 
+    "Fibonacci",
+#    "CenterMain",
+#    "CenterMainBalanced",
+    "Monocle",
+#    "RightWiderLeftStack",
 #    "LeftWiderRightStack"
 ]
 
 layout_mode = "Tag"
-scratchpad = []
 disable_current_tag_swap = true
 focus_behaviour = "Sloppy"
 focus_new_windows = true
@@ -35,8 +34,6 @@ window_rules = [
     {window_class = "discord", spawn_on_tag = 3},
 
     {window_class = "mpv", spawn_on_tag = 4},
-    {window_class = "Pcmanfm", spawn_on_tag = 4},
-    {window_class = "Nemo", spawn_on_tag = 4},
 
     {window_class = "Steam", spawn_on_tag = 5},
     {window_class = "Lutris", spawn_on_tag = 5},
@@ -49,6 +46,34 @@ window_rules = [
 
     {window_class = "Virt-manager", spawn_on_tag = 8},
 ]
+
+[[scratchpad]]
+name = "KeePassXC"
+value = "keepassxc"
+x = 5.0
+y = 5.0
+height = 90.0
+width = 90.0
+
+[[scratchpad]]
+name = "Alacritty"
+value = "alacritty"
+x = 5.0
+y = 5.0
+height = 90.0
+width = 90.0
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "KeePassXC"
+modifier = ["modkey"]
+key = "g"
+
+[[keybind]]
+command = "ToggleScratchPad"
+value = "Alacritty"
+modifier = ["modkey"]
+key = "t"
 
 [[keybind]]
 command = "Execute"
@@ -130,6 +155,7 @@ key = "i"
 command = "MoveWindowUp"
 modifier = ["modkey", "Shift"]
 key = "k"
+
 
 [[keybind]]
 command = "MoveWindowDown"
@@ -322,13 +348,13 @@ key = "m"
 
 [[keybind]]
 command = "Execute"
-value = "vscodium"
+value = "code"
 modifier = ["modkey", "Shift"]
 key = "n"
 
 [[keybind]]
 command = "Execute"
-value = "pcmanfm"
+value = "thunar"
 modifier = ["modkey", "Shift"]
 key = "f"
 

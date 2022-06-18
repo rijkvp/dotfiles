@@ -15,7 +15,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 # Exa (better ls)
-alias ls='exa --icons -s extension --group-directories-first'
+alias ls='exa --icons -1 -s extension --group-directories-first'
 alias lsa='exa --icons -1 -la -s extension --group-directories-first'
 # Bare dotfiles git repo
 alias cfg='/usr/bin/git --git-dir=$HOME/repos/dotfiles --work-tree=$HOME'
@@ -25,14 +25,13 @@ alias clone='git clone'
 alias gitq='git add -A && git commit -a -m' # Quick Commit
 alias push='git push'
 # Neovim
-alias v='nvim'
+alias nv='nvim'
 alias sv='sudo nvim'
-alias s='systemctl'
 # File managers
 alias fm='ranger'
 alias gfm='pcmanfm'
-# VSCodium -> VSCode
-alias code='vscodium'
+# Notes folder
+alias kb='cd $HOME/docs/notes && nv .'
 # Newsboat
 alias nb='newsboat'
 # Package mangement
@@ -46,7 +45,7 @@ alias auri="paru -S"
 alias aurs="paru -Ss"
 alias mirrorup="sudo reflector -f 30 -l 30 -n 20 -c 'Netherlands,Germany,Belgium' --verbose --save /etc/pacman.d/mirrorlist"
 
-alias todo='v ~/docs/notes/todo.md'
+alias todo='nvim ~/docs/notes/todo.md'
 alias ytdl='yt-dlp'
 alias ytdla='ytdl -f "ba"' # Best audio
 
@@ -58,3 +57,4 @@ set -o vi
 
 # zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

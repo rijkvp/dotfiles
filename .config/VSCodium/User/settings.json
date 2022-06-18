@@ -3,8 +3,7 @@
   "telemetry.telemetryLevel": "off",
   "redhat.telemetry.enabled": false,
   // Theme
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.productIconTheme": "icons-carbon",
+  "workbench.colorTheme": "One Dark Pro Darker",
   "git.autofetch": true,
   "rust-analyzer.inlayHints.enable": false,
   "git.enableSmartCommit": true,
@@ -12,7 +11,9 @@
   "[dart]": {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     "editor.selectionHighlight": false,
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
@@ -20,7 +21,6 @@
     "editor.wordBasedSuggestions": false,
   },
   "debug.console.fontSize": 12,
-  "terminal.integrated.fontSize": 12,
   "git.confirmSync": false,
   "explorer.confirmDelete": false,
   // Vim
@@ -30,8 +30,13 @@
   "vim.hlsearch": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.handleKeys": {
@@ -40,31 +45,65 @@
   },
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<space>"],
-      "commands": ["workbench.action.files.save"]
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
     },
     {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
     },
     {
-      "before": ["p"],
-      "after": ["p", "g", "v", "y"]
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     }
   ],
   // Status bar colors
   "vim.statusBarColorControl": false,
-  "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
-  "vim.statusBarColors.insert": ["#BF616A", "#000"],
-  "vim.statusBarColors.visual": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
-  "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
+  "vim.statusBarColors.normal": [
+    "#8FBCBB",
+    "#000"
+  ],
+  "vim.statusBarColors.insert": [
+    "#BF616A",
+    "#000"
+  ],
+  "vim.statusBarColors.visual": [
+    "#B48EAD",
+    "#000"
+  ],
+  "vim.statusBarColors.visualline": [
+    "#B48EAD",
+    "#000"
+  ],
+  "vim.statusBarColors.visualblock": [
+    "#A3BE8C",
+    "#000"
+  ],
   "vim.statusBarColors.replace": "#D08770",
   "vim.statusBarColors.commandlineinprogress": "#007ACC",
   "vim.statusBarColors.searchinprogressmode": "#007ACC",
@@ -77,9 +116,11 @@
   "workbench.startupEditor": "none",
   "window.menuBarVisibility": "toggle",
   "editor.lineNumbers": "relative",
-  "editor.fontFamily": "'FiraCode Nerd Font', serif",
-  "editor.fontSize": 12,
+  "editor.fontFamily": "'Iosevka Nerd Font', 'FiraCode Nerd Font', serif",
   "window.zoomLevel": 1,
-  "workbench.statusBar.visible": false,
-  // Auto
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  // Custom
+  "customizeUI.font.regular": "Helvetica Nueve",
+  "customizeUI.font.monospace": "Fira Code",
 }
