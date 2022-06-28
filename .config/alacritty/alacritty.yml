@@ -6,7 +6,7 @@ window:
   opacity: 0.85
 
   padding:
-    x: 12 
+    x: 12
     y: 16
 
 scrolling:
@@ -15,7 +15,7 @@ scrolling:
 font:
   normal:
     family: Iosevka Nerd Font
-    style: Regular 
+    style: Regular
   bold:
     family: Iosevka Nerd Font
     style: Bold
@@ -24,12 +24,7 @@ font:
 cursor:
   style:
     shape: Beam
-
   thickness: 0.16
-      
-bell:
-  duration: 50 
-  color: '#ff9999'
 
 key_bindings:
   # Copy/paste with CRTL+Shift or Alt
@@ -893,6 +888,7 @@ schemes:
       white:   '0xffffff'
 
   one_dark_edit: &one_dark_edit
+    transparent_background_colors: true
     primary:
       background: '0x21222C'
       foreground: '0xF8F8F2'
@@ -1389,6 +1385,6 @@ schemes:
       magenta: '0xff00ff'
       cyan:    '0x00ffff'
       white:   '0xffffff'
-  
+
 # Set theme here
 colors: *one_dark_edit

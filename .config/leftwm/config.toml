@@ -4,7 +4,7 @@ workspaces = []
 tags = ["web", "dev", "comm", "csume", "game", "write", "gfx", "bg"]
 
 layouts = [
-#    "MainAndVertStack",
+    "MainAndVertStack",
     "MainAndHorizontalStack",
 #    "MainAndDeck",
 #    "GridHorizontal",
@@ -20,7 +20,8 @@ layouts = [
 
 layout_mode = "Tag"
 disable_current_tag_swap = true
-focus_behaviour = "Sloppy"
+disable_window_snap = false
+focus_behaviour = "Driven"
 focus_new_windows = true
 
 window_rules = [
@@ -31,6 +32,7 @@ window_rules = [
     {window_class = "VSCodium", spawn_on_tag = 2},
 
     {window_class = "Thunderbird", spawn_on_tag = 3},
+    {window_class = "Signal", spawn_on_tag = 3},
     {window_class = "discord", spawn_on_tag = 3},
 
     {window_class = "mpv", spawn_on_tag = 4},
@@ -196,6 +198,11 @@ key = "l"
 command = "FocusWorkspacePrevious"
 modifier = ["modkey"]
 key = "h"
+
+[[keybind]]
+command = "ToggleFloating"
+modifier = ["modkey", "Control"]
+key = "f"
 
 [[keybind]]
 command = "GotoTag"

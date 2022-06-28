@@ -59,5 +59,5 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-u> :belowright split \| resize 10 \| term<CR>
+nnoremap <C-u> :belowright split \| resize 20 \| term<CR>
 
