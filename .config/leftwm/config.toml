@@ -21,7 +21,7 @@ layouts = [
 layout_mode = "Tag"
 disable_current_tag_swap = true
 disable_window_snap = false
-focus_behaviour = "Driven"
+focus_behaviour = "Sloppy"
 focus_new_windows = true
 
 window_rules = [
@@ -46,7 +46,6 @@ window_rules = [
 
     {window_class = "Blender", spawn_on_tag = 7},
 
-    {window_class = "Virt-manager", spawn_on_tag = 8},
 ]
 
 [[scratchpad]]

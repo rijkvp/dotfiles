@@ -1,5 +1,6 @@
 #!/bin/sh
 
+git config --global credential.helper store
 git clone --bare https://github.com/rijkvp/dotfiles.git $HOME/.dotfiles
 
 function dotfiles {

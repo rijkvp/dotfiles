@@ -1,4 +1,4 @@
-zstyle :compinstall filename '/home/rijkvp/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
