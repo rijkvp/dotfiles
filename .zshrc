@@ -11,15 +11,15 @@ export PATH=$HOME/scripts:$PATH
 # Aliases #
 ###########
 
+# Bare dotfiles git repo
+alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@"
+# cd back
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 # Exa (better ls)
 alias ls='exa --icons -1 -s extension --group-directories-first'
 alias lsa='exa --icons -1 -la -s extension --group-directories-first'
-# Bare dotfiles git repo
-alias cfg='/usr/bin/git --git-dir=$HOME/repos/dotfiles --work-tree=$HOME'
-alias cfgs='cfg status --untracked-files=no'
 # Git
 alias clone='git clone'
 alias gitq='git add -A && git commit -a -m' # Quick Commit
