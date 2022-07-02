@@ -12,7 +12,7 @@ export PATH=$HOME/scripts:$PATH
 ###########
 
 # Bare dotfiles git repo
-alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@"
+alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" 
 # cd back
 alias ..="cd .."
 alias ...="cd ../.."
