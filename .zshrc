@@ -13,7 +13,7 @@ export PATH=$HOME/scripts:$PATH
 ###########
 
 # Bare dotfiles git repo
-alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME" 
+alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # cd back
 alias ..="cd .."
 alias ...="cd ../.."
@@ -27,7 +27,6 @@ alias gitq='git add -A && git commit -a -m' # Quick Commit
 alias push='git push'
 # Neovim
 alias nv='nvim'
-alias sv='sudo nvim'
 # File managers
 alias fm='ranger'
 alias gfm='pcmanfm'
