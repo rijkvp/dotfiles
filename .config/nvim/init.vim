@@ -38,8 +38,10 @@ set number
 set wrap " Line wraping
 set noshowmode " Unneeded because of status bar
 
+set autoindent smartindent
+set clipboard+=unnamedplus
+
 " Tabs
-set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab

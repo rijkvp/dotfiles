@@ -1,6 +1,6 @@
 configuration {
     modi: "window,run,combi";
-    font: "Iosevka Aile Medium 11";
+    font: "Iosevka Medium 13";
     show-icons: true;
 }
-@theme "~/.config/rofi/themes/compact.rasi"
+@theme "~/.config/rofi/themes/arc-dark.rasi"

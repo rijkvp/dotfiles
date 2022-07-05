@@ -1,0 +1,28 @@
+{
+    // Interface
+    "workbench.colorTheme": "One Dark Pro Darker",
+    // Editor settings
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "'Iosevka Nerd Font', 'FiraCode Nerd Font', serif",
+    // Window
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 1,
+    // Git
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    // VSCode Neovim
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
+    "git.autofetch": true,
+    // No telemetry :)
+    "telemetry.telemetryLevel": "off",
+    // Theme
+    "rust-analyzer.inlayHints.enable": false,
+    "editor.bracketPairColorization.enabled": true,
+    "debug.console.fontSize": 12,
+    "explorer.confirmDelete": false,
+    "workbench.activityBar.visible": false,
+}
