@@ -37,6 +37,11 @@ fi
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
+# Startup scripts
+~/.startup.sh
+~/.autostart.sh
+
 # start window manager
 
 exec leftwm
+
