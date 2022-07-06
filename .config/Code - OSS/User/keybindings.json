@@ -3,12 +3,12 @@
     {
         "key": "ctrl+j",
         "command": "selectNextSuggestion",
-        "when": "suggestWidgetVisible"
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
         "key": "ctrl+k",
         "command": "selectPrevSuggestion",
-        "when": "suggestWidgetVisible"
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
         "key": "ctrl+j",
@@ -40,6 +40,7 @@
         "command": "list.focusDown",
         "when": "listFocus && !inputFocus"
     },
+    // Quick open
     {
         "key": "ctrl+p",
         "command": "workbench.action.quickOpen"
@@ -55,11 +56,11 @@
     },
     // Tab switching
     {
-        "key": "ctrl+k",
+        "key": "alt+k",
         "command": "workbench.action.previousEditor"
     },
     {
-        "key": "ctrl+j",
+        "key": "alt+j",
         "command": "workbench.action.nextEditor"
     },
     // Closing tabs
@@ -110,5 +111,11 @@
         "key": "ctrl+m",
         "command": "editor.action.marker.next",
         "when": "editorFocus"
-    }
+    },
+    // Go to defenition
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
 ]
