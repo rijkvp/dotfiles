@@ -337,7 +337,7 @@ key = "u"
 
 [[keybind]]
 command = "Execute"
-value = "firefox"
+value = "brave"
 modifier = ["modkey", "Shift"]
 key = "w"
 
@@ -370,3 +370,47 @@ command = "Execute"
 value = "~/scripts/random_wallpaper.sh"
 modifier = ["modkey", "Shift"]
 key = "v"
+
+[[keybind]]
+command = "Execute"
+value = "~/scripts/screenshot.sh"
+modifier = ["modkey", "Shift"]
+key = "s"
+
+## MPD Control
+
+[[keybind]]
+command = "Execute"
+value = "mpc play"
+modifier = []
+key = "F1"
+
+[[keybind]]
+command = "Execute"
+value = "mpc volume -5"
+modifier = []
+key = "F2"
+
+[[keybind]]
+command = "Execute"
+value = "mpc volume +5"
+modifier = []
+key = "F3"
+
+[[keybind]]
+command = "Execute"
+value = "mpc prev"
+modifier = []
+key = "F6"
+
+[[keybind]]
+command = "Execute"
+value = "mpc toggle"
+modifier = []
+key = "F7"
+
+[[keybind]]
+command = "Execute"
+value = "mpc next"
+modifier = []
+key = "F8"

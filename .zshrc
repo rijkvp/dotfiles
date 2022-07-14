@@ -47,7 +47,7 @@ alias mirrorup="sudo reflector -f 30 -l 30 -n 20 -c 'Netherlands,Germany,Belgium
 
 alias todo='nvim ~/docs/notes/todo.md'
 alias ytdl='yt-dlp'
-alias ytdla='ytdl -f "ba"' # Best audio
+alias ytdla='ytdl -f "ba" -o "%(title)s.%(ext)s"' # Best audio
 
 # Start Starship
 eval "$(starship init zsh)"

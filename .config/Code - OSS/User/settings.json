@@ -9,7 +9,6 @@
     "editor.fontFamily": "'Iosevka Nerd Font', 'FiraCode Nerd Font', serif",
     // Window
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 1,
     // Git
     "git.enableSmartCommit": true,
     "git.confirmSync": false,
@@ -17,6 +16,7 @@
     "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
     "vscode-neovim.neovimInitVimPaths.linux": "~/.config/nvim/init.vim",
     "git.autofetch": true,
+    "keyboard.dispatch": "keyCode", // Fixes remaps
     // No telemetry :)
     "telemetry.telemetryLevel": "off",
     // Theme
@@ -24,5 +24,6 @@
     "editor.bracketPairColorization.enabled": true,
     "debug.console.fontSize": 12,
     "explorer.confirmDelete": false,
+    "window.zoomLevel": 1,
     "workbench.activityBar.visible": false,
 }
