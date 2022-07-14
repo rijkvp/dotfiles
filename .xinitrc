@@ -38,7 +38,6 @@ fi
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # Startup scripts
-~/.startup.sh
 ~/.autostart.sh
 
 # start window manager
