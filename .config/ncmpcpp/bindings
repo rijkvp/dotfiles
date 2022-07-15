@@ -568,9 +568,13 @@ def_key "G"
   move_end
 def_key "g"
   move_home
+def_key "d"
+  delete_playlist_items
 
 # Menus
 
+def_key "p"
+  show_playlist
 def_key "m"
   show_media_library
 def_key "m"

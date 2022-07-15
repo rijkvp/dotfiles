@@ -1,9 +1,8 @@
+#!/bin/zsh
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-compinit
-
-# Add to path
+compinit # Add to path
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/scripts:$PATH
@@ -46,8 +45,14 @@ alias aurs="paru -Ss"
 alias mirrorup="sudo reflector -f 30 -l 30 -n 20 -c 'Netherlands,Germany,Belgium' --verbose --save /etc/pacman.d/mirrorlist"
 
 alias todo='nvim ~/docs/notes/todo.md'
-alias ytdl='yt-dlp'
-alias ytdla='ytdl -f "ba" -o "%(title)s.%(ext)s"' # Best audio
+# Downloads best audio, converts to opus, embeds metadata
+alias ytdl-audio='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(title)s.%(ext)s"'
+alias ytdl-album='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(album)s/%(title)s.%(ext)s"'
+# Additionally parses metadata from 'Arist - Title' format
+alias ytdl-audio-title='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(title)s.%(ext)s" --parse-metadata "title:%(artist)s - %(title)s"'
+alias mp='ncmpcpp'
+
+
 
 # Start Starship
 eval "$(starship init zsh)"
@@ -57,4 +62,3 @@ set -o vi
 
 # zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-

@@ -12,6 +12,9 @@ setxkbmap -option caps:escape &
 /usr/bin/pipewire-pulse &
 /usr/bin/wireplumber &
 
+# Start mpd
+mpd &
+
 # Unclutter, automatically hides the cursor when inactive
 unclutter --start-hidden &
 
