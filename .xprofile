@@ -1,22 +1,31 @@
 #!/bin/sh
-# Executed after .xprofile and before .startup.sh
+# Executed on window manager start or from .xinitrc when using xinit (when you run the startx command)
 # Some general settings usefull for everyone using my dotfiles
 
+# DISPLAY
+# Set DPI correctly
+xrandr --dpi 96
+export WINIT_X11_SCALE_FACTOR=1.0
+# Unclutter, auto hides the cursor
+unclutter --start-hidden &
+
+# KEYBOARD
 # Set keyboard rate higher
 xset r rate 300 50
 # Map Caps Lock to Escape for easier Vim etc.
 setxkbmap -option caps:escape &
 
+# AUDIO
 # Start pipewire
 /usr/bin/pipewire &
 /usr/bin/pipewire-pulse &
 /usr/bin/wireplumber &
-
 # Start mpd
 mpd &
 
-# Unclutter, automatically hides the cursor when inactive
-unclutter --start-hidden &
-
 # Set wallpaper
-~/scripts/random_wallpaper.sh
+$HOME/scripts/random_wallpaper.sh
+
+# Startup script
+$HOME/.startup.sh &
+

@@ -377,13 +377,7 @@ value = "~/scripts/screenshot.sh"
 modifier = ["modkey", "Shift"]
 key = "s"
 
-## MPD Control
-
-[[keybind]]
-command = "Execute"
-value = "mpc play"
-modifier = []
-key = "F1"
+## mpd controls
 
 [[keybind]]
 command = "Execute"
@@ -400,17 +394,17 @@ key = "F3"
 [[keybind]]
 command = "Execute"
 value = "mpc prev"
-modifier = []
+modifier = ["modkey"]
 key = "F6"
 
 [[keybind]]
 command = "Execute"
 value = "mpc toggle"
-modifier = []
+modifier = ["modkey"]
 key = "F7"
 
 [[keybind]]
 command = "Execute"
 value = "mpc next"
-modifier = []
+modifier = ["modkey"]
 key = "F8"

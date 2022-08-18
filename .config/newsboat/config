@@ -5,7 +5,7 @@ max-items 100
 # Firefox as browser
 browser "/usr/bin/firefox %u"
 # MPV macro
-macro w set browser "nohup mpv %u >/dev/null 2>&1 &" ; open-in-browser ; set browser "elinks %u"
+macro w set browser "nohup mpv %u --ytdl-format=\"bestvideo[height<=?1080]+bestaudio/best\" >/dev/null 2>&1 &" ; open-in-browser ; set browser "elinks %u"
 
 # Vim keybindings
 unbind-key ENTER

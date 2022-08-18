@@ -37,9 +37,6 @@ fi
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
-# Startup scripts
-~/.startup.sh
-
 # start window manager
 
 exec leftwm

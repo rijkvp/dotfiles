@@ -13,6 +13,9 @@ export PATH=$HOME/scripts:$PATH
 
 # Bare dotfiles git repo
 alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# Fuzzy find
+alias skc='cd $(sk)'
+alias skv='cd $(sk) && nvim .'
 # cd back
 alias ..="cd .."
 alias ...="cd ../.."

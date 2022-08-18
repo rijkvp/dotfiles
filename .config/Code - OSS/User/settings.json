@@ -24,6 +24,7 @@
     "editor.bracketPairColorization.enabled": true,
     "debug.console.fontSize": 12,
     "explorer.confirmDelete": false,
-    "window.zoomLevel": 1,
-    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 0.6,
+    "glassit.alpha": 220,
+    "workbench.statusBar.visible": false,
 }
