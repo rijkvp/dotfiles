@@ -2,10 +2,10 @@
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
-compinit # Add to path
+compinit
+# Add to path
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/scripts:$PATH
 
 ###########
 # Aliases #
@@ -14,8 +14,8 @@ export PATH=$HOME/scripts:$PATH
 # Bare dotfiles git repo
 alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Fuzzy find
-alias skc='cd $(sk)'
-alias skv='cd $(sk) && nvim .'
+alias s='cd $(sk)'
+alias v='nvim $(sk)'
 # cd back
 alias ..="cd .."
 alias ...="cd ../.."

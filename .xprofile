@@ -24,8 +24,7 @@ setxkbmap -option caps:escape &
 mpd &
 
 # Set wallpaper
-$HOME/scripts/random_wallpaper.sh
-
+$HOME/.local/bin/wallpaper.sh &
 # Startup script
 $HOME/.startup.sh &
 

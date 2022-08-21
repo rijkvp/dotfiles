@@ -1,6 +1,6 @@
 {
     // Interface
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "Ayu Dark Bordered",
     // Editor settings
     "editor.renderWhitespace": "none",
     "editor.minimap.enabled": false,
