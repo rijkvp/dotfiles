@@ -1,0 +1,67 @@
+# Essential
+make
+git
+dash
+
+# Desktop
+rofi
+dunst
+picom
+unclutter
+sddm-runit
+slock
+feh
+arc-gtk-theme
+arc-icon-theme
+arc-solid-gtk-theme
+
+# Terminal
+alacritty # Terminal Emulator
+starship
+zsh
+zsh-syntax-highlighting
+
+# Audio: Pipewire
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+
+# Media
+mpc
+mpd
+mpd-runit
+ncmpcpp
+
+
+# CLI tools
+bat
+exa
+skim
+dust
+fd
+ripgrep
+
+# Programs
+ffmpeg
+hunspell
+hunspell-en_us
+hunspell-nl
+mpv
+newsboat
+ranger
+rsync
+yt-dlp
+zathura
+zathura-djvu
+zathura-pdf-mupdf
+
+# Fonts
+ttf-dejavu
+ttf-fira-code
+ttf-iosevka-nerd
+ttf-liberation
+ttf-opensans
+ttf-roboto
+ttf-roboto-mono
+
