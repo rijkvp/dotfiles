@@ -367,19 +367,19 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "~/.local/bin/wallpaper.sh"
+value = "~/.local/bin/setwallpaper"
 modifier = ["modkey", "Shift"]
 key = "v"
 
 [[keybind]]
 command = "Execute"
-value = "~/.local/bin/screenshot.sh"
+value = "~/.local/bin/screenshot"
 modifier = ["modkey"]
 key = "s"
 
 [[keybind]]
 command = "Execute"
-value = "~/.local/bin/screenshot-select.sh"
+value = "~/.local/bin/screenshot-select"
 modifier = ["modkey", "Shift"]
 key = "s"
 

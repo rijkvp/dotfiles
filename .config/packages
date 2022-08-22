@@ -1,7 +1,9 @@
 # Essential
 make
-git
 dash
+git
+curl
+wget
 
 # Desktop
 rofi
