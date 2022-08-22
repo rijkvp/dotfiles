@@ -1,7 +1,3 @@
 #/bin/sh
-# Generates theme in '~/.theme-dist' from template
-src="$HOME/.config/theme-template"
-dst="$HOME/.local/share/theme"
-rm -rf $dst
-cp -r $src/static $dst
-teraformer -i $src/themes/current -o $dst yaml "$src/templates/**"
+# Generates config files from theme templates
+teraformer -i $HOME/.config/themes/current -o .config yaml "$HOME/.config/config_template/**"
