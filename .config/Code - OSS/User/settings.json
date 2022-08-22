@@ -3,7 +3,6 @@
     "workbench.colorTheme": "Ayu Dark Bordered",
     // Editor settings
     "editor.renderWhitespace": "none",
-    "editor.minimap.enabled": false,
     "editor.wordWrap": "on",
     "editor.lineNumbers": "relative",
     "editor.fontFamily": "'Iosevka Nerd Font', 'FiraCode Nerd Font', serif",
@@ -27,4 +26,6 @@
     "window.zoomLevel": 0.6,
     "glassit.alpha": 220,
     "workbench.statusBar.visible": false,
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
 }

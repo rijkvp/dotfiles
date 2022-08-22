@@ -20,9 +20,6 @@ alias v='nvim $(sk)'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-# Exa (better ls)
-alias ls='exa --icons -1 -s extension --group-directories-first'
-alias lsa='exa --icons -1 -la -s extension --group-directories-first'
 # Git
 alias clone='git clone'
 alias gitq='git add -A && git commit -a -m' # Quick Commit
@@ -36,6 +33,12 @@ alias gfm='pcmanfm'
 alias kb='cd $HOME/docs/notes && nv .'
 # Newsboat
 alias nb='newsboat'
+# CLI TOOLS
+# Exa (better ls)
+alias ls='exa --icons -1 -s extension --group-directories-first'
+alias lsa='exa --icons -1 -la -s extension --group-directories-first'
+alias cat='bat'
+alias grep='rg'
 # Package mangement
 alias pacup="sudo pacman -Syu"
 alias pacs="pacman -Ss"

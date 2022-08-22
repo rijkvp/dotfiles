@@ -1,0 +1,35 @@
+{% raw %}{% assign bg_color = "{% endraw %}{{ bg0 }}{% raw %}" %}{% endraw %}
+{% raw %}{% assign default_color = "{% endraw %}{{ fg0 }}{% raw %}" %}{% endraw %}
+{% raw %}{% assign accent_color = "{% endraw %}{{ accent1 }}{% raw %}" %}{% endraw %}
+{% raw %}{% assign secondary_color = "{% endraw %}{{ accent2 }}{% raw %}" %}{% endraw %}
+
+{% raw %}
+{% for tag in workspace.tags %}
+
+{% comment %} Tag owned by active display {% endcomment %}
+{% if tag.mine %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F{{bg_color}}}%{B{{accent_color}}} {{tag.name}} %{B-}%{F-}
+%{A}
+
+{% comment %} Tag is visible on another display {% endcomment %}
+{% elsif tag.visible  %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F{{bg_color}}}%{B{{secondary_color}}} {{tag.name}} %{B-}%{F-}
+%{A}
+
+{% comment %} Tag has at least one window {% endcomment %}
+{% elsif tag.busy %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F{{accent_color}}} {{tag.name}} %{F-}
+%{A}
+
+{% comment %} Default: tag is empty {% endcomment %}
+{% else %}
+%{A1:$SCRIPTPATH/change_to_tag {{workspace.index}} {{tag.index}}:}
+%{F{{default_color}}} {{tag.name}} %{F-}
+%{A}
+
+{% endif %}
+{% endfor %}
+{% endraw %}

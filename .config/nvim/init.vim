@@ -4,6 +4,8 @@ set nocompatible " Required by polygot
 call plug#begin()
 
 Plug 'olimorris/onedarkpro.nvim' " Theme
+Plug 'EdenEast/nightfox.nvim' " Themes: https://github.com/EdenEast/nightfox.nvim
+
 Plug 'vim-airline/vim-airline' " Status bar
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot' " Language packs
@@ -21,8 +23,6 @@ Plug 'simrat39/rust-tools.nvim'
 
 Plug 'hrsh7th/vim-vsnip'
 
-" File explorer (https://github.com/kyazdani42/nvim-tree.lua) Plug 'kyazdani42/nvim-web-devicons' Plug 'kyazdani42/nvim-tree.lua'
-Plug 'preservim/nerdtree'
 
 " IDK
 Plug 'folke/lsp-colors.nvim'
@@ -42,7 +42,8 @@ Plug 'github/copilot.vim' " GitHub Copilot
 call plug#end()
 
 " Theme
-colorscheme onedarkpro
+" colorscheme carbonfox
+" colorscheme onedarkpro
 let g:airline_theme='onedark'
 
 " General
