@@ -3,9 +3,7 @@
 git config --global credential.helper store
 git clone --bare https://github.com/rijkvp/dotfiles.git $HOME/.dotfiles
 
-function dotfiles {
-   git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
-}
+alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 mkdir -p .dotfiles-backup
 dotfiles checkout
