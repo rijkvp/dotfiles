@@ -59,8 +59,9 @@ alias ytdl-audio-title='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-m
 alias mp='ncmpcpp'
 
 
-alias cp='cp -I'
-alias mv='mv -I'
+# Confirmation
+alias cp='cp -i'
+alias mv='mv -i'
 alias rm='rm -I'
 
 # Start Starship

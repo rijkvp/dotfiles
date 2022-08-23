@@ -367,7 +367,7 @@ key = "f"
 
 [[keybind]]
 command = "Execute"
-value = "~/.local/bin/setwallpaper"
+value = "~/.local/bin/setbg"
 modifier = ["modkey", "Shift"]
 key = "v"
 
