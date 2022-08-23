@@ -1,5 +1,5 @@
 border_width = 2
 margin = 10
 default_border_color = "{{ bg1 }}"
-focused_border_color = "{{ accent0 }}"
-floating_border_color = "{{ accent1 }}"
+focused_border_color = "{{ primary0 }}"
+floating_border_color = "{{ secondary0 }}"

@@ -22,8 +22,10 @@ blue:    '#88c0d0'
 magenta: '#b48ead'
 pink:    '#b48ead'
 
-accent0: '#88c0d0'
-accent1: '#81a1c1'
+primary0:   '#88c0d0'
+primary1:   '#81a1c1'
+secondary0: '#8fbcbb'
+secondary1: '#5e81ac'
 
 bright:
   black:   '#4c566a'

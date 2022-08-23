@@ -85,7 +85,7 @@ key = "p"
 
 [[keybind]]
 command = "Execute"
-value = "~/.config/rofi/scripts/powermenu.sh"
+value = "rofi -show pm -modes \"pm:$HOME/.config/rofi/powermenu.sh\""
 modifier = ["modkey", "Shift"]
 key = "p"
 
