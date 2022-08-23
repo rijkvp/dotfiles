@@ -355,12 +355,6 @@ key = "m"
 
 [[keybind]]
 command = "Execute"
-value = "code"
-modifier = ["modkey", "Shift"]
-key = "n"
-
-[[keybind]]
-command = "Execute"
 value = "thunar"
 modifier = ["modkey", "Shift"]
 key = "f"
@@ -414,3 +408,27 @@ command = "Execute"
 value = "mpc next"
 modifier = ["modkey"]
 key = "F8"
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "0.0"
+modifier = ["modkey", "Alt"]
+key = "v"
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "1.0"
+modifier = ["modkey", "Alt"]
+key = "b"
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "2.5"
+modifier = ["modkey", "Alt"]
+key = "n"
+
+[[keybind]]
+command = "SetMarginMultiplier"
+value = "5.0"
+modifier = ["modkey", "Alt"]
+key = "m"
