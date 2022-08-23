@@ -1,5 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
 [line_break]
 disabled = true
 
-[rust]
-disabled = true
+[character]
+error_symbol = "[➜ ](bold red)"
+success_symbol = "[➜ ](bold green)"
+

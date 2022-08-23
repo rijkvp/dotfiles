@@ -1,0 +1,13 @@
+themes:
+  dynamic:
+    bg: {{ bg0 }}
+    red: {{ red }}
+    green: {{ green }}
+    yellow: {{ yellow }}
+    blue: {{ blue }}
+    magenta: {{ magenta }}
+    orange: {{ orange }}
+    fg: {{ fg0 }}
+    cyan: {{ cyan }}
+    black: {{ black }}
+    white: {{ white }}
