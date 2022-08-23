@@ -1,3 +1,3 @@
 #/bin/sh
 # Generates config files from theme templates
-teraformer -i $HOME/.config/themes/current -o .config yaml "$HOME/.config/config_template/**"
+teraformer -i $HOME/.config/themes/current -o $HOME/.config yaml "$HOME/.config/config_template/**"
