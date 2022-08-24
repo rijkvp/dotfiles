@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "Available themes:"
+ls $HOME/.config/themes | sed "s/current//"
+echo "Enter theme filename: "
+read theme_file
+echo "Set theme to $theme_file"
+ln -sf $HOME/.config/themes/$theme_file $HOME/.config/themes/current
+gen-theme

@@ -1,19 +1,19 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = []
-tags = ["web", "dev", "comm", "write", "game", "csume", "gfx", "bg"]
+tags = ["dev", "web", "comm", "fun",  "gui", "bg"]
 
 layouts = [
+    "Fibonacci",
     "MainAndVertStack",
     "MainAndHorizontalStack",
 #    "MainAndDeck",
 #    "GridHorizontal",
 #    "EvenHorizontal",
 #    "EvenVertical",
-    "Fibonacci",
 #    "CenterMain",
 #    "CenterMainBalanced",
-    "Monocle",
+#    "Monocle",
 #    "RightWiderLeftStack",
 #    "LeftWiderRightStack"
 ]
@@ -25,28 +25,26 @@ focus_behaviour = "Sloppy"
 focus_new_windows = true
 
 window_rules = [
-    {window_class = "firefox", spawn_on_tag = 1},
-    {window_class = "Brave-browser", spawn_on_tag = 1},
+    {window_class = "Alacritty", spawn_on_tag = 1},
+    {window_class = "code-oss", spawn_on_tag = 1},
+    {window_class = "VSCodium", spawn_on_tag = 1},
 
-    {window_class = "code-oss", spawn_on_tag = 2},
-    {window_class = "VSCodium", spawn_on_tag = 2},
+    {window_class = "firefox", spawn_on_tag = 2},
+    {window_class = "Brave-browser", spawn_on_tag = 2},
 
     {window_class = "Thunderbird", spawn_on_tag = 3},
     {window_class = "Signal", spawn_on_tag = 3},
     {window_class = "discord", spawn_on_tag = 3},
 
-    {window_class = "libreoffice-writer", spawn_on_tag = 4},
-    {window_class = "libreoffice-calc", spawn_on_tag = 4},
+    {window_class = "Steam", spawn_on_tag = 4},
+    {window_class = "Lutris", spawn_on_tag = 4},
+    {window_class = "Minecraft Launcher", spawn_on_tag = 4},
+    {window_class = "factorio", spawn_on_tag = 4},
 
-    {window_class = "Steam", spawn_on_tag = 5},
-    {window_class = "Lutris", spawn_on_tag = 5},
-    {window_class = "Minecraft Launcher", spawn_on_tag = 5},
-    {window_class = "factorio", spawn_on_tag = 5},
-
-    {window_class = "mpv", spawn_on_tag = 6},
-
-    {window_class = "Blender", spawn_on_tag = 7},
-
+    {window_class = "libreoffice-writer", spawn_on_tag = 5},
+    {window_class = "libreoffice-calc", spawn_on_tag = 5},
+    {window_class = "gimp-2.10", spawn_on_tag = 5},
+    {window_class = "Blender", spawn_on_tag = 5},
 ]
 
 [[scratchpad]]
