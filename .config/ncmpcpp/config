@@ -374,13 +374,13 @@ visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
 #
 ## Available values: classic, alternative.
 ##
-user_interface = alternative
+user_interface = classic
 #
 #data_fetching_delay = yes
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
 ##
-media_library_primary_tag = album_artist
+media_library_primary_tag = artist
 #
 media_library_albums_split_by_date = no
 #

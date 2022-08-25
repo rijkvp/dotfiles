@@ -1,6 +1,6 @@
 {
     // Interface
-    "workbench.colorTheme": "Ayu Dark Bordered",
+    "workbench.colorTheme": "Nord",
     // Editor settings
     "editor.renderWhitespace": "none",
     "editor.wordWrap": "on",
