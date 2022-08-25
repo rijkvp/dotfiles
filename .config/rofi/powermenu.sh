@@ -4,7 +4,7 @@
 
 if [ x"$@" = x"Lock" ]
 then
-    slock
+    nohup slock >/dev/null 2>&1 &
     exit 0
 fi
 if [ x"$@" = x"Suspend" ]

@@ -104,11 +104,12 @@ setup_fonts() {
 . /etc/os-release
 if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
     echo "Using arch or artix!"
+    echo "0. Updating system.."
+    sudo pacman -Syu
     echo "1. Installing essentials.."
     install_pacman_packages "make git curl wget dash zsh openssh"
     echo "Set dash to replace sh"
     sudo ln -sfT dash /usr/bin/sh
-
     echo "2. Install terminal stuff.."
     if dialog "Install terminal stuff?"; then
         install_pacman_packages "alacritty zellij starship bat exa skim dust fd ripgrep ranger"
