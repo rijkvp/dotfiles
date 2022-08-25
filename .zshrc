@@ -1,74 +1,80 @@
 #!/bin/zsh
+# ZSH Settings??
 zstyle :compinstall filename "$HOME/.zshrc"
-
 autoload -Uz compinit
 compinit
-# Add to path
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
 
-###########
-# Aliases #
-###########
+# Additional paths
+export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
 
-# Bare dotfiles git repo
-alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-# Fuzzy find
-alias s='cd $(sk)'
-alias v='nvim $(sk)'
-# cd back
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
+# Check if command is available
+is_installed() {
+    command -v "$1" 1>/dev/null 2>&1
+}
+
 # Git
-alias clone='git clone'
-alias gitq='git add -A && git commit -a -m' # Quick Commit
-alias push='git push'
-# Neovim
-alias nv='nvim'
-# File managers
-alias fm='ranger'
-alias gfm='pcmanfm'
-# Notes folder
-alias kb='cd $HOME/docs/notes && nv .'
-# Newsboat
-alias nb='newsboat'
-# CLI TOOLS
-# Exa (better ls)
-alias ls='exa --icons -1 -s extension --group-directories-first'
-alias lsa='exa --icons -1 -la -s extension --group-directories-first'
-alias cat='bat'
-alias grep='rg'
-# Package mangement
-alias pacup="sudo pacman -Syu"
-alias pacs="pacman -Ss"
-alias paci="sudo pacman -S"
-alias pacr="sudo pacman -Rsnu"
-alias pacclean="sudo pacman -Rs $(pacman -Qtdq)"
-alias auru="paru -Syu"
-alias auri="paru -S"
-alias aurs="paru -Ss"
-alias mirrorup="sudo reflector -f 30 -l 30 -n 20 -c 'Netherlands,Germany,Belgium' --verbose --save /etc/pacman.d/mirrorlist"
-
-alias todo='nvim ~/docs/notes/todo.md'
-# Downloads best audio, converts to opus, embeds metadata
-alias ytdl-audio='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(title)s.%(ext)s"'
-alias ytdl-album='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(album)s/%(title)s.%(ext)s"'
-# Additionally parses metadata from 'Arist - Title' format
-alias ytdl-audio-title='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(title)s.%(ext)s" --parse-metadata "title:%(artist)s - %(title)s"'
-alias mp='ncmpcpp'
+alias gitq='git add -A && git commit -a' # Quick add & commit
+alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 
-# Confirmation
+# File Magement
+# Confirmations
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
+# Directory upwards
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+# Better ls
+alias ls='exa --icons -1 -s extension --group-directories-first'
+alias lsa='exa --icons -1 -la -s extension --group-directories-first'
 
-# Start Starship
-eval "$(starship init zsh)"
+# Fuzzy find
+if is_installed sk; then
+    alias s='cd $(sk)'
+    alias v='nvim $(sk)'
+fi
 
-# VI Mode
-set -o vi
+# Programs
+alias vim='nvim'
+alias nv='nvim'
+alias nb='newsboat'
+alias fm='ranger'
+alias mp='ncmpcpp'
 
+# Improved CLI tools
+if is_installed bat; then
+    alias cat='bat'
+fi
+if is_installed rg; then
+    alias grep='rg'
+fi
+
+# Package mangement
+if is_installed pacman; then
+    alias pacup="sudo pacman -Syu"
+    alias pacs="pacman -Ss"
+    alias paci="sudo pacman -S"
+    alias pacr="sudo pacman -Rsnu"
+    alias pacclean="sudo pacman -Rs $(pacman -Qtdq)"
+fi
+if is_installed paru; then
+    alias auru="paru -Syu"
+    alias auri="paru -S"
+    alias aurs="paru -Ss"
+fi
+
+
+# YT-DLP
+if is_installed yt-dlp; then
+    # Downloads best audio, converts to opus, embeds metadata
+    alias ytdl-audio='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(title)s.%(ext)s"'
+    alias ytdl-album='yt-dlp -f "ba[ext=m4a]" -x --audio-format opus --embed-metadata --xattrs -o "%(album)s/%(title)s.%(ext)s"'
+fi
+
+
+eval "$(starship init zsh)" # Starship
+set -o vi # VI Mode
 # zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
