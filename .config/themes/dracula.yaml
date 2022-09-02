@@ -1,0 +1,39 @@
+# Dracula Theme: https://draculatheme.com/
+
+name: 'dracula'
+
+bg0: '#282a36'
+bg1: '#44475a'
+bg2: '#44475a'
+
+fg0: '#f8f8f2'
+fg1: '#f8f8f2'
+fg2: '#f8f8f2'
+
+black:   '#282a36'
+white:   '#f8f8f2'
+
+red:     '#ff5555'
+orange:  '#ffb86c'
+yellow:  '#f1fa8c'
+green:   '#50fa7b'
+cyan:    '#8be9fd'
+blue:    '#6272a4'
+magenta: '#bd93f9'
+pink:    '#ff79c6'
+
+primary0:   '#6272a4'
+primary1:   '#6272a4'
+
+secondary0: '#ff79c6'
+secondary1: '#ff79c6'
+
+bright:
+  black: '#6272a4'
+  white: '#ffffff'
+  red: '#ff6e6e'
+  green: '#69ff94'
+  yellow: '#ffffa5'
+  blue: '#d6acff'
+  magenta: '#ff92df'
+  cyan: '#a4ffff'

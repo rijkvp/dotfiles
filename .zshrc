@@ -38,7 +38,6 @@ fi
 
 # Programs
 alias vim='nvim'
-alias nv='nvim'
 alias nb='newsboat'
 alias fm='ranger'
 alias mp='ncmpcpp'

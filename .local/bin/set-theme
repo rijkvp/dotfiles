@@ -1,8 +1,19 @@
 #!/bin/sh
 echo "Available themes:"
-ls $HOME/.config/themes | sed "s/current//"
-echo "Enter theme filename: "
-read theme_file
-echo "Set theme to $theme_file"
-ln -sf $HOME/.config/themes/$theme_file $HOME/.config/themes/current
-gen-theme
+themes=$(ls $HOME/.config/themes -1 | sed '/current/d; s/.yaml//')
+counter=1
+echo "$themes" | while read item; do
+    echo "$counter. $item"
+    counter=$((counter + 1))
+done
+echo "Enter theme number:"
+read theme_num
+
+selected=$(echo "$themes" | sed "$theme_num!d")
+if [ -n "${selected}" ]; then
+    echo "Set theme to $selected"
+    ln -sf $HOME/.config/themes/$selected.yaml $HOME/.config/themes/current
+    gen-theme
+else
+    echo "Error: invalid input."
+fi
