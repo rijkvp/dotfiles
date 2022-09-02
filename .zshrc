@@ -21,7 +21,7 @@ alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 # Confirmations
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -I'
+alias rm='rm -i'
 # Directory upwards
 alias ..="cd .."
 alias ...="cd ../.."
