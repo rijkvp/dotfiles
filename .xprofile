@@ -23,8 +23,10 @@ setxkbmap -option caps:escape &
 # Start mpd
 mpd &
 
+eval `ssh-agent`
+
 # Set wallpaper
-$HOME/.local/bin/setwallpaper &
+$HOME/.local/bin/setbg &
 # Startup script
 $HOME/.startup.sh &
 

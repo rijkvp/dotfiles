@@ -8,16 +8,9 @@ template:
         Fixed: 1
       run:
         plugin:
-          location: "zellij:tab-bar"
+          location: "zellij:compact-bar"
     - direction: Vertical
       body: true
-    - direction: Vertical
-      borderless: true
-      split_size:
-        Fixed: 2
-      run:
-        plugin:
-          location: "zellij:status-bar"
 tabs:
   - direction: Vertical
 session:

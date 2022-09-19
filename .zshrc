@@ -1,5 +1,4 @@
 #!/bin/zsh
-# ZSH Settings??
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
@@ -73,7 +72,12 @@ if is_installed yt-dlp; then
 fi
 
 
-eval "$(starship init zsh)" # Starship
+if is_installed starship; then
+    eval "$(starship init zsh)" # Starship
+fi
+if is_installed zoxide; then
+    eval "$(zoxide init zsh)" # Zoxide
+fi
 set -o vi # VI Mode
 # zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/.local/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
