@@ -12,7 +12,7 @@ is_installed() {
 }
 
 # Git
-alias gitq='git add -A && git commit -a' # Quick add & commit
+alias gitq='git add . && git commit'
 alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 
@@ -26,7 +26,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 # Better ls
-alias ls='exa --icons -1 -s extension --group-directories-first'
+alias ls='exa --icons -s extension --group-directories-first'
 alias lsa='exa --icons -1 -la -s extension --group-directories-first'
 
 # Fuzzy find
