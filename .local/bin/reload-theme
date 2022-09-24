@@ -1,0 +1,5 @@
+#!/bin/sh
+setbg
+pkill polybar
+nohup polybar >/dev/null &2>1 &
+

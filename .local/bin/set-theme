@@ -16,4 +16,7 @@ if [ -n "${selected}" ]; then
     gen-theme
 else
     echo "Error: invalid input."
+    exit
 fi
+echo "Reloading applications.."
+reload-theme
