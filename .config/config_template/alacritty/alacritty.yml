@@ -52,6 +52,7 @@ colors:
      magenta: '{{ magenta }}'
      cyan:    '{{ cyan }}'
      white:   '{{ white }}'
+   {% if bright %}
    bright:
      black:   '{{ bright.black }}'
      red:     '{{ bright.red }}'
@@ -61,3 +62,4 @@ colors:
      magenta: '{{ bright.magenta }}'
      cyan:    '{{ bright.cyan }}'
      white:   '{{ bright.white }}'
+   {% endif %}

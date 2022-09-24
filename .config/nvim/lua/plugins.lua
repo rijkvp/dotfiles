@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
         run = ":TSUpdate"
     })
     use 'nvim-treesitter/nvim-treesitter-context'
+    use 'ap/vim-css-color'
 
     -- Color Schemes
     use 'folke/tokyonight.nvim'

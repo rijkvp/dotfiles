@@ -1,0 +1,30 @@
+# One Dark: https://github.com/atom/atom/tree/master/packages/one-dark-syntax/styles
+
+name: 'one_dark'
+
+bg0: '#282c34' # syntax bg
+bg1: '#31353f' # bg0 + 5%
+bg2: '#3a404c' # bg0 + 10%
+
+fg0: '#abb2bf' # mono 1
+fg1: '#828997' # mono 2
+fg2: '#5c6370' # mono 3
+
+black:   '#5c6370' # mono 3
+white:   '#abb2bf' # mono 1
+
+red:     '#e06c75' # red 1
+orange:  '#d19a66' # orange 1
+yellow:  '#e5c07b' # orange 2
+green:   '#98c379'
+cyan:    '#56b6c2'
+blue:    '#61afef'
+magenta: '#c678dd'
+pink:    '#c678dd'
+
+primary0: '#579dd6'
+primary1: '#579dd6'
+
+secondary0: '#82a868'
+secondary1: '#82a868'
+
