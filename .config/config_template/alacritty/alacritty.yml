@@ -21,11 +21,6 @@ font:
     style: Bold
   size: 12.0
 
-cursor:
-  style:
-    shape: Beam
-  thickness: 0.16
-
 key_bindings:
   # Copy/paste with CRTL+Shift or Alt
   - { key: V,         mods: Control|Shift, action: Paste           }
