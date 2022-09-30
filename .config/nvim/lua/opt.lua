@@ -14,6 +14,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.opt.showmode = false
 vim.opt.updatetime = 50
 
 vim.g.mapleader = ' '

@@ -53,4 +53,8 @@ return require('packer').startup(function(use)
 
     -- Color Schemes
     use 'navarasu/onedark.nvim'
+    use {
+      'nvim-lualine/lualine.nvim', -- Status line
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 end)

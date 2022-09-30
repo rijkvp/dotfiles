@@ -10,3 +10,7 @@ map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
 
 map('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+
+-- Terminal
+map('n', '<leader>t', '<cmd>:belowright 14split | terminal<CR>i') -- Split
+map('t', '<Esc>', '<C-\\><C-n>') -- Make escape work in termnal
