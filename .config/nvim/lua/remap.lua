@@ -3,7 +3,10 @@ local function map(m, k, v)
 end
 
 map('n', '<leader>z', '<cmd>Ex<CR>')
-map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-map('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
-map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+map('n', '<leader>f', '<cmd>Telescope find_files<CR>')
+map('n', '<leader>g', '<cmd>Telescope live_grep<CR>')
+map('n', '<leader>fb', '<cmd>Telescope buffers<CR>')
+map('n', '<leader>fh', '<cmd>Telescope help_tags<CR>')
+
+map('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>')
