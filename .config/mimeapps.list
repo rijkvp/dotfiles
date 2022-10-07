@@ -1,0 +1,28 @@
+# Default applications used by xdg-open
+
+[Default Applications]
+inode/directory=thunar.desktop
+
+text/markdown=nvim.desktop
+text/x-c=nvim.desktop
+text/javascript=nvim.desktop
+text/plain=nvim.desktop
+
+image/png=gimp.desktop
+image/jpeg=gimp.desktop
+image/jpg=gimp.desktop
+
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/chrome=firefox.desktop
+text/html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+
+application/epub+zip=org.pwmt.zathura-pdf-mupdf.desktop
+application/pdf=org.pwmt.zathura.desktop
+
