@@ -1,10 +1,7 @@
-#!/usr/bin/env bash
-
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+#!/bin/sh
 
 leftwm-command "UnloadTheme"
 
-pkill compton
-pkill picom
 pkill polybar
+pkill picom
 

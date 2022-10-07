@@ -15,8 +15,7 @@ setxkbmap -option caps:escape &
 # AUDIO
 # Start pipewire
 /usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/wireplumber &
+
 # Start mpd
 mpd &
 

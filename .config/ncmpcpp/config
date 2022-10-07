@@ -317,9 +317,11 @@ visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161
 #
 ##
 ## Note: Custom command that will be executed each time song changes. Useful for
+
 ## notifications etc.
 ##
 #execute_on_song_change = ""
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -380,7 +382,7 @@ user_interface = classic
 #
 ## Available values: artist, album_artist, date, genre, composer, performer.
 ##
-media_library_primary_tag = artist
+media_library_primary_tag = album_artist
 #
 media_library_albums_split_by_date = no
 #
@@ -445,7 +447,7 @@ media_library_albums_split_by_date = no
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-#startup_screen = playlist
+startup_screen = media_library
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
@@ -562,19 +564,19 @@ media_library_albums_split_by_date = no
 ## are used there is a possibility that you'll be able to use only colors with
 ## transparent background.
 #
-#colors_enabled = yes
+colors_enabled = yes
 #
 #empty_tag_color = cyan
 #
 #header_window_color = default
 #
-#volume_color = default
+volume_color = yellow
 #
-#state_line_color = default
+state_line_color = green
 #
 #state_flags_color = default:b
 #
-#main_window_color = yellow
+main_window_color = green
 #
 #color1 = white
 #

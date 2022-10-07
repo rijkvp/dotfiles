@@ -38,8 +38,8 @@ fi
 # Programs
 alias vim='nvim'
 alias nb='newsboat'
-alias fm='ranger'
 alias mp='ncmpcpp'
+alias fm='joshuto'
 
 # Improved CLI tools
 if is_installed bat; then
