@@ -113,7 +113,7 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
 
     # TODO: Install paru & leftwm
     if dialog "3. Install desktop programs (THIS CAN BREAK YOUR SYSTEM!!)?"; then
-        install_pacman_packages "polybar rofi dunst picom unclutter sddm slock feh pipewire pipewire-alsa pipewire-jack pipewire-pulse mpd mpc ncmpcpp"
+        install_pacman_packages "polybar rofi dunst picom unclutter sddm slock feh pipewire pipewire-alsa pipewire-jack pipewire-pulse mpd mpc ncmpcpp arc-gtk-theme"
     fi
 
     if dialog "4. Install applications?"; then
