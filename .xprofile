@@ -2,6 +2,9 @@
 # Executed on window manager start or from .xinitrc when using xinit (when you run the startx command)
 # Some general settings usefull for everyone using my dotfiles
 
+# GENERAL
+export EDITOR="nvim"
+
 # DISPLAY
 # Set DPI correctly
 xrandr --dpi 96

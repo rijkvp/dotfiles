@@ -17,16 +17,13 @@ dialog() {
     fi
 }
 
-
 clone_dotfiles() {
     if [ ! -d $HOME/.dotfiles ]; then
         git clone --bare https://github.com/rijkvp/dotfiles.git $HOME/.dotfiles
-        alias dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-        dotf config status.showUntrackedFiles no
-        dotf checkout
-    else
-        echo "Dotfiles already cloned"
     fi
+    dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    $dotf config status.showUntrackedFiles no
+    $dotf checkout
 }
 
 install_pacman_packages() {
@@ -84,8 +81,6 @@ setup_shell() {
     # Install stuff from GitHub on other distros
     # starship: shell prompt
     install_github_bin starship starship/starship starship-x86_64-unknown-linux-gnu.tar.gz
-    # zellij: terminal multiplexer
-    install_github_bin zellij zellij-org/zellij zellij-x86_64-unknown-linux-musl.tar.gz
 }
 
 setup_fonts() {
@@ -104,20 +99,20 @@ setup_fonts() {
 . /etc/os-release
 if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
     echo "Using arch or artix!"
-    echo "0. Updating system.."
-    sudo pacman -Syu
+    echo "0. Updating repositories.."
+    sudo pacman -Syy
     echo "1. Installing essentials.."
-    install_pacman_packages "make git curl wget dash zsh openssh"
-    echo "Set dash to replace sh"
+    install_pacman_packages "make git curl wget dash zsh openssh unzip"
     sudo ln -sfT dash /usr/bin/sh
+
     echo "2. Install terminal stuff.."
     if dialog "Install terminal stuff?"; then
-        install_pacman_packages "alacritty zellij starship bat exa skim dust fd ripgrep ranger"
+        install_pacman_packages "alacritty bat exa skim dust fd ripgrep"
     fi
 
+    # TODO: Install paru & leftwm
     if dialog "3. Install desktop programs (THIS CAN BREAK YOUR SYSTEM!!)?"; then
-        install_pacman_packages "dunst picom unclutter sddm slock feh pipewire pipewire-alsa pipewire-jack pipewire-pulse mpd mpc mpd ncmpcpp"
-        # TODO: Install/enable services for sddm openssh mpd (on Artix)
+        install_pacman_packages "polybar rofi dunst picom unclutter sddm slock feh pipewire pipewire-alsa pipewire-jack pipewire-pulse mpd mpc ncmpcpp"
     fi
 
     if dialog "4. Install applications?"; then
@@ -128,6 +123,7 @@ else
 fi
 
 clone_dotfiles
+# TODO: Set theme, configure browser (librewolf?)
 
 if dialog "Setup shell?"; then
     setup_shell
