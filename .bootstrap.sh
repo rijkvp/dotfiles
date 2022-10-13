@@ -107,7 +107,8 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
 
     echo "2. Install terminal stuff.."
     if dialog "Install terminal stuff?"; then
-        install_pacman_packages "alacritty bat exa skim dust fd ripgrep"
+        install_pacman_packages "alacritty bat exa skim dust fd ripgrep difftastic"
+        git config --global diff.external difft # difftastic as git diff replacement
     fi
 
     # TODO: Install paru & leftwm

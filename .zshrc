@@ -36,15 +36,20 @@ if is_installed sk; then
 fi
 
 # Programs
+spawn() {
+    xdg-open $1 &
+}
+alias open='xdg-open'
 alias vim='nvim'
 alias nb='newsboat'
 alias mp='ncmpcpp'
 alias fm='joshuto'
 
-# Improved CLI tools
-if is_installed bat; then
-    alias cat='bat'
+if is_installed helix; then
+    alias hx='helix'
 fi
+
+# Improved CLI tools
 if is_installed rg; then
     alias grep='rg'
 fi
