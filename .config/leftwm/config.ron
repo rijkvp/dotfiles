@@ -44,6 +44,7 @@
         (window_class: "code-oss", window_title: None, spawn_on_tag: 1, spawn_floating: None),
         (window_class: "VSCodium", window_title: None, spawn_on_tag: 1, spawn_floating: None),
         (window_class: "firefox", window_title: None, spawn_on_tag: 2, spawn_floating: None),
+        (window_class: "LibreWolf", window_title: None, spawn_on_tag: 2, spawn_floating: None),
         (window_class: "Brave-browser", window_title: None, spawn_on_tag: 2, spawn_floating: None),
         (window_class: "Thunderbird", window_title: None, spawn_on_tag: 3, spawn_floating: None),
         (window_class: "Signal", window_title: None, spawn_on_tag: 3, spawn_floating: None),
@@ -104,7 +105,7 @@
         (command: ToggleScratchPad, value: "MusicPlayer", modifier: ["modkey"], key: "m"),
         // Quick launch
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
-        (command: Execute, value: "firefox", modifier: ["modkey", "Shift"], key: "w"),
+        (command: Execute, value: "librewolf", modifier: ["modkey", "Shift"], key: "w"),
         (command: Execute, value: "thunderbird-beta", modifier: ["modkey", "Shift"], key: "m"),
         (command: Execute, value: "discord", modifier: ["modkey", "Shift"], key: "d"),
         (command: Execute, value: "signal-desktop", modifier: ["modkey", "Shift"], key: "e"),

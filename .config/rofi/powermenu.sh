@@ -15,6 +15,7 @@ fi
 if [ x"$@" = x"Shutdown" ]
 then
     loginctl poweroff
+    systemctl poweroff
     exit 0
 fi
 if [ x"$@" = x"Reboot" ]

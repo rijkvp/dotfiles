@@ -117,7 +117,7 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
     fi
 
     if dialog "4. Install applications?"; then
-        install_pacman_packages "firefox gimp code libreoffice-fresh hunspell hunspell-en_us hunspell-nl zathura zathura-djvu zathura-pdf-mupdf ttf-dejavu ttf-fira-sans ttf-liberation ttf-opensans ttf-roboto yt-dlp ffmpeg mpv newsboat rsync"
+        install_pacman_packages "firefox gimp thunar code libreoffice-fresh hunspell hunspell-en_us hunspell-nl zathura zathura-djvu zathura-pdf-mupdf ttf-dejavu ttf-fira-sans ttf-liberation ttf-opensans ttf-roboto yt-dlp ffmpeg mpv newsboat rsync"
     fi
 else
     echo "Unsupported distro '$ID'! Things might break!"
