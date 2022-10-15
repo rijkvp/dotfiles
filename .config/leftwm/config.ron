@@ -116,8 +116,8 @@
         (command: Execute, value: "~/.local/bin/screenshot-select", modifier: ["modkey", "Shift"], key: "s"),
         // Volume
         (command: Execute, value: "pactl set-sink-mute @DEFAULT_SINK@ toggle", modifier: ["modkey"], key: "0"),
-        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ -5%", modifier: ["modkey"], key: "y"),
-        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ +5%", modifier: ["modkey"], key: "u"),
+        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ -2%", modifier: ["modkey"], key: "y"),
+        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ +2%", modifier: ["modkey"], key: "u"),
         // MPD control using mpc
         (command: Execute, value: "mpc volume -5", modifier: ["modkey"], key: "F2"),
         (command: Execute, value: "mpc volume +5", modifier: ["modkey"], key: "F3"),
