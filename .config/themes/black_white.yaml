@@ -1,0 +1,42 @@
+# Pure black/white theme 
+
+name: 'black_white'
+
+bg0: '#000000'
+bg1: '#111111'
+bg2: '#222222'
+
+fg0: '#eeeeee'
+fg1: '#dddddd'
+fg2: '#dddddd'
+
+black:   '#000000'
+white:   '#ffffff'
+
+primary0: '#ffffff'
+primary1: '#ffffff'
+
+secondary0: '#eeeeee'
+secondary1: '#eeeeee'
+
+red:     '#aaaaaa' 
+orange:  '#aaaaaa'
+yellow:  '#aaaaaa'
+green:   '#aaaaaa'
+cyan:    '#aaaaaa'
+blue:    '#aaaaaa'
+magenta: '#aaaaaa'
+pink:    '#aaaaaa'
+
+bright:
+  black:   '#777777' 
+  white:   '#ffffff' 
+  red:     '#eeeeee' 
+  orange:  '#eeeeee'
+  yellow:  '#eeeeee'
+  green:   '#eeeeee'
+  cyan:    '#eeeeee'
+  blue:    '#eeeeee'
+  magenta: '#eeeeee'
+  pink:    '#eeeeee'
+
