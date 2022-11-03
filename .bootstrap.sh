@@ -20,6 +20,8 @@ dialog() {
 clone_dotfiles() {
     if [ ! -d $HOME/.dotfiles ]; then
         git clone --bare https://github.com/rijkvp/dotfiles.git $HOME/.dotfiles
+    else
+        echo "Already cloned."
     fi
     dotf="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
     $dotf config status.showUntrackedFiles no
@@ -93,7 +95,7 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
 
     echo "2. Install terminal stuff.."
     if dialog "Install terminal programs?"; then
-        install_pacman_packages "alacritty bat exa skim dust fd ripgrep difftastic"
+        install_pacman_packages "alacritty bat exa skim dust fd ripgrep difftastic starship"
         git config --global diff.external difft # difftastic as git diff replacement
     fi
 
@@ -109,16 +111,19 @@ else
     echo "Unsupported distro '$ID'! Things might break!"
 fi
 
+echo "Updating dotfiles.."
 clone_dotfiles
+echo "Installing mudflow.."
 install_mudflow
-
-if dialog "Setup shell?"; then
-    setup_shell
-fi
 
 if dialog "Download nerd fonts?"; then
     setup_fonts
 fi
+if dialog "Setup shell?"; then
+    setup_shell
+fi
+
+echo "Set a theme"
+set-theme
 
 echo "Done!"
-echo "You might want to restart the shell and set a theme."

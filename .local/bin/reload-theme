@@ -1,5 +1,5 @@
 #!/bin/sh
 setbg
+leftwm-command SoftReload
 pkill polybar
-nohup polybar >/dev/null &2>1 &
-
+nohup polybar > /dev/null &2>1 &
