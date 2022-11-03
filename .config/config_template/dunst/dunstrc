@@ -1,5 +1,5 @@
 [global]
-font = Iosevka Term 11
+font = {{ font }}
 
 # Allow a small subset of html markup:
 #   <b>bold</b>
@@ -79,7 +79,7 @@ shrink = no
 # The transparency of the window.  Range: [0; 100].
 # This option will only work if a compositing windowmanager is
 # present (e.g. xcompmgr, compiz, etc.).
-transparency = 30
+transparency = 40
 
 # Don't remove messages, if the user is idle (no mouse or keyboard input)
 # for longer than idle_threshold seconds.
@@ -142,7 +142,7 @@ separator_color = frame
 startup_notification = false
 
 # dmenu path.
-dmenu = /usr/bin/dmenu -p dunst:
+# dmenu = /usr/bin/dmenu -p dunst:
 
 # Browser for opening urls in context menu.
 browser = /usr/bin/firefox -new-tab
@@ -181,25 +181,22 @@ context = ctrl+shift+period
 [urgency_low]
 # IMPORTANT: colors have to be defined in quotation marks.
 # Otherwise the "#" and following would be interpreted as a comment.
-frame_color = "#3B7C87"
-foreground = "#3B7C87"
-background = "#191311"
-#background = "#2B313C"
+frame_color = "{{ secondary0 }}"
+foreground  = "{{ fg0 }}"
+background  = "{{ bg0 }}"
 timeout = 4
 
 [urgency_normal]
-frame_color = "#5B8234"
-foreground = "#5B8234"
-background = "#191311"
-#background = "#2B313C"
+frame_color = "{{ primary0 }}"
+foreground  = "{{ fg0 }}"
+background  = "{{ bg0 }}"
 timeout = 6
 
 [urgency_critical]
-frame_color = "#B7472A"
-foreground = "#B7472A"
-background = "#191311"
-#background = "#2B313C"
-timeout = 8
+frame_color = "{{ red }}"
+foreground  = "{{ fg0 }}"
+background  = "{{ bg0 }}"
+timeout = 10
 
 
 # Every section that isn't one of the above is interpreted as a rules to

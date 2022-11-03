@@ -1,2 +1,3 @@
 #!/bin/sh
 scrot ~/pics/screenshots/%Y%m%d_%H:%M:%S_screenshot.png
+notify-send --urgency=low "Captured screenshot"
