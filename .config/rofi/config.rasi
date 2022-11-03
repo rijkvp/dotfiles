@@ -1,6 +1,11 @@
 configuration {
-    modi: "window,run,combi";
+    modi: "window,drun,combi";
     font: "Iosevka Nerd Font Medium 13";
     show-icons: true;
+    icon-theme: "hicolor";
+    kb-remove-to-eol: "";
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-row-up: "Up,Control+p,Control+k";
+	kb-row-down: "Down,Control+n,Control+j";
 }
 @theme "~/.config/rofi/themes/dynamic.rasi"

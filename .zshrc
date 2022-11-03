@@ -37,7 +37,7 @@ fi
 
 # Programs
 spawn() {
-    xdg-open $1 &
+    nohup xdg-open $1 > /dev/null 2>&1 &
 }
 alias open='xdg-open'
 alias vim='nvim'

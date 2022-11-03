@@ -1,25 +1,28 @@
+
 * {
     bg0: {{ bg0 }};
+    bg1: {{ bg1 }};
     fg0: {{ fg0 }};
 
-    primary1:  {{ primary1 }};
+    primary0:  {{ primary0 }};
 
     secondary0: {{ secondary0 }};
-    secondary1: {{ secondary1 }};
 
-    backlight:   #ccffeedd;
     background-color:  transparent;
 
     highlight:     underline bold #eceff4;
-    transparent: rgba(46,52,64,0);
+    transparent: rgba(0,0,0,0);
+
+    dark: rgba(15,22,26,0.7);
 }
 
 window {
     location: center;
     anchor:   center;
     padding: 10px;
+    width: 500px;
+
     border:  0px;
-    border-radius: 6px;
 
     background-color: @transparent;
     spacing: 0;
@@ -33,21 +36,22 @@ mainbox {
 }
 
 message {
-    color: @bg0;
+    color: @fg0;
     padding: 5;
-    border-color: @primary1;
-    border:  0px 2px 2px 2px;
-    background-color: @secondary0;
+    background: @bg0;
+    border-color: @primary0;
+    border: 2px;
 }
 
 inputbar {
     color: @fg0;
     padding: 11px;
-    background-color: #3b4252;
+    background-color: @dark;
+    opacity: 0.5;
 
-    border: 1px;
-    border-radius:  6px 6px 0px 0px;
-    border-color: @secondary1;
+    border: 2px;
+    border-radius:  6px;
+    border-color: @primary0;
 }
 
 entry, prompt, case-indicator {
@@ -56,30 +60,33 @@ entry, prompt, case-indicator {
 }
 
 prompt {
-    margin: 0px 1em 0em 0em ;
+    margin: 0px 0.5em 0em 0em;
 }
 
 listview {
+    margin: 12px 0px 0px 0px;
     padding: 8px;
-    border-radius: 0px 0px 6px 6px;
-    border-color: @secondary1;
-    border: 0px 1px 1px 1px;
-    background-color: rgba(46,52,64,0.9);
+
+    border-radius: 6px;
+    border-color: @primary0;
+    border: 2px;
+    background-color: @dark;
     dynamic: false;
 }
 
 element {
+    margin: 0px 0px 0px 0px;
     padding: 3px;
     vertical-align: 0.5;
-    border-radius: 4px;
-    background-color: transparent;
+
+    border-radius: 6px;
     color: @primary1;
-    text-color: rgb(216, 222, 233);
+    text-color: @fg0;
 }
 
 element selected.normal {
-	background-color: @secondary0;
-	text-color: #2e3440;
+	background-color: @primary0;
+	text-color: @bg0;
 }
 
 element-text, element-icon {
@@ -87,17 +94,3 @@ element-text, element-icon {
     text-color:       inherit;
 }
 
-button {
-    padding: 6px;
-    color: @primary1;
-    horizontal-align: 0.5;
-
-    border: 2px 0px 2px 2px;
-    border-radius: 4px 0px 0px 4px;
-    border-color: @primary1;
-}
-
-button selected normal {
-    border: 2px 0px 2px 2px;
-    border-color: @primary1;
-}
