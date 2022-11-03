@@ -14,10 +14,10 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka Nerd Font
+    family: {{ term_font }}
     style: Regular
   bold:
-    family: Iosevka Nerd Font
+    family: {{ term_font }}
     style: Bold
   size: 12.0
 

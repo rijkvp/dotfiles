@@ -105,7 +105,7 @@
         (command: ToggleScratchPad, value: "MusicPlayer", modifier: ["modkey"], key: "m"),
         // Quick launch
         (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
-        (command: Execute, value: "librewolf", modifier: ["modkey", "Shift"], key: "w"),
+        (command: Execute, value: "firefox", modifier: ["modkey", "Shift"], key: "w"),
         (command: Execute, value: "thunderbird-beta", modifier: ["modkey", "Shift"], key: "m"),
         (command: Execute, value: "discord", modifier: ["modkey", "Shift"], key: "d"),
         (command: Execute, value: "signal-desktop", modifier: ["modkey", "Shift"], key: "e"),
@@ -116,9 +116,12 @@
         (command: Execute, value: "~/.local/bin/screenshot", modifier: ["modkey"], key: "s"),
         (command: Execute, value: "~/.local/bin/screenshot-select", modifier: ["modkey", "Shift"], key: "s"),
         // Volume
-        (command: Execute, value: "pactl set-sink-mute @DEFAULT_SINK@ toggle", modifier: ["modkey"], key: "0"),
-        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ -2%", modifier: ["modkey"], key: "y"),
-        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ +2%", modifier: ["modkey"], key: "u"),
+        (command: Execute, value: "pactl set-sink-mute @DEFAULT_SINK@ toggle", modifier: [], key: "F1"),
+        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ -2%", modifier: [], key: "F2"),
+        (command: Execute, value: "pactl set-sink-volume @DEFAULT_SINK@ +2%", modifier: [], key: "F3"),
+	    // Brightness
+        (command: Execute, value: "brightnessctl -d \"intel_backlight\" set 1%-", modifier: [], key: "F11"),
+        (command: Execute, value: "brightnessctl -d \"intel_backlight\" set +1%", modifier: [], key: "F12"),
         // MPD control using mpc
         (command: Execute, value: "mpc volume -5", modifier: ["modkey"], key: "F2"),
         (command: Execute, value: "mpc volume +5", modifier: ["modkey"], key: "F3"),

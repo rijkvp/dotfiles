@@ -3,7 +3,7 @@
 # Some general settings usefull for everyone using my dotfiles
 
 # GENERAL
-export EDITOR="nvim"
+export EDITOR="helix"
 
 # DISPLAY
 # Set DPI correctly

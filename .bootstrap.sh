@@ -30,18 +30,9 @@ install_pacman_packages() {
     sudo pacman -S --needed $1
 }
 
-# 1: name
-# 2: repo path
-# 3: file
-install_github_bin() {
-    if is_installed $1; then
-        echo "$1 already installed"
-    else
-        echo "Installing $1.."
-        wget -q https://github.com/$2/releases/latest/download/$3 -O $3
-        tar -xf $3 -C $bin_dir
-        rm $3
-    fi
+install_mudflow() {
+    wget -q https://github.com/rijkvp/mudflow/releases/download/dev/mudflow -O ~/.local/bin/mudflow
+    chmod +x ~/.local/bin/mudflow
 }
 
 # 1: NerdFont name
@@ -77,10 +68,6 @@ setup_shell() {
     else
         echo "zsh syntax highlighting is already installed."
     fi
-
-    # Install stuff from GitHub on other distros
-    # starship: shell prompt
-    install_github_bin starship starship/starship starship-x86_64-unknown-linux-gnu.tar.gz
 }
 
 setup_fonts() {
@@ -88,9 +75,8 @@ setup_fonts() {
     mkdir -p $font_dir
 
     # install patched nerd fonts
-    install_nerdfont FiraCode
     install_nerdfont Iosevka
-    install_nerdfont JetBrainsMono
+    install_nerdfont FiraCode
     fc-cache
 }
 
@@ -106,7 +92,7 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
     sudo ln -sfT dash /usr/bin/sh
 
     echo "2. Install terminal stuff.."
-    if dialog "Install terminal stuff?"; then
+    if dialog "Install terminal programs?"; then
         install_pacman_packages "alacritty bat exa skim dust fd ripgrep difftastic"
         git config --global diff.external difft # difftastic as git diff replacement
     fi
@@ -116,7 +102,7 @@ if [ "$ID" = "arch" ] || [ "$ID" = "artix" ]; then
         install_pacman_packages "polybar rofi dunst picom unclutter sddm slock feh pipewire pipewire-alsa pipewire-jack pipewire-pulse mpd mpc ncmpcpp arc-gtk-theme"
     fi
 
-    if dialog "4. Install applications?"; then
+    if dialog "4. Install additional applications?"; then
         install_pacman_packages "firefox gimp thunar code libreoffice-fresh hunspell hunspell-en_us hunspell-nl zathura zathura-djvu zathura-pdf-mupdf ttf-dejavu ttf-fira-sans ttf-liberation ttf-opensans ttf-roboto yt-dlp ffmpeg mpv newsboat rsync"
     fi
 else
@@ -124,13 +110,13 @@ else
 fi
 
 clone_dotfiles
-# TODO: Set theme, configure browser (librewolf?)
+install_mudflow
 
 if dialog "Setup shell?"; then
     setup_shell
 fi
 
-if dialog "Setup fonts?"; then
+if dialog "Download nerd fonts?"; then
     setup_fonts
 fi
 
