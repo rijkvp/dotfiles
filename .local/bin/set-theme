@@ -6,6 +6,7 @@ echo "$themes" | while read item; do
     echo "$counter. $item"
     counter=$((counter + 1))
 done
+
 echo "Enter theme number:"
 read theme_num
 

@@ -96,7 +96,9 @@
         (command: MoveToTag, value: "6", modifier: ["modkey", "Shift"], key: "6"),
         // Rofi
         (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "rofi -show pm -modes \"pm:$HOME/.config/rofi/powermenu.sh\"", modifier: ["modkey", "Shift"], key: "p"),
+        (command: Execute, value: "rofi -show pm -modes 'pm:rofi-powermenu'", modifier: ["modkey", "Shift"], key: "p"),
+        (command: Execute, value: "rofi -show t -modes 't:rofi-set-theme'", modifier: ["modkey", "Shift"], key: "t"),
+        (command: Execute, value: "rofi -show f -modes 'f:rofi-set-font'", modifier: ["modkey", "Shift"], key: "y"),
         // Lock / exit
         (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
@@ -125,9 +127,10 @@
         // MPD control using mpc
         (command: Execute, value: "mpc volume -5", modifier: ["modkey"], key: "F2"),
         (command: Execute, value: "mpc volume +5", modifier: ["modkey"], key: "F3"),
-        (command: Execute, value: "mpc prev", modifier: ["modkey"], key: "F6"),
-        (command: Execute, value: "mpc toggle", modifier: ["modkey"], key: "F7"),
-        (command: Execute, value: "mpc next", modifier: ["modkey"], key: "F8"),
+        (command: Execute, value: "mpc clear", modifier: [], key: "F5"),
+        (command: Execute, value: "mpc prev", modifier: [], key: "F6"),
+        (command: Execute, value: "mpc toggle", modifier: [], key: "F7"),
+        (command: Execute, value: "mpc next", modifier: [], key: "F8"),
         // Margin toggle
         (command: SetMarginMultiplier, value: "0.0", modifier: ["modkey", "Alt"], key: "c"),
         (command: SetMarginMultiplier, value: "0.6", modifier: ["modkey", "Alt"], key: "v"),

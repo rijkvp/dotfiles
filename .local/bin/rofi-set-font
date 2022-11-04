@@ -1,0 +1,16 @@
+#!/bin/sh
+# Set font using rofi
+
+if [ ! -z "$@" ] && [ -d "$HOME/.local/share/fonts/$@" ]
+then
+    notify-send "Setting font to '$@'."
+    echo "font: '$@ Nerd Font'" > $HOME/.config/theme-options.yaml
+    echo "term_font: '$@ Nerd Font'" >> $HOME/.config/theme-options.yaml
+    gen-theme > /dev/null 2>&1
+    reload-theme > /dev/null 2>&1
+    exit 0
+fi
+
+echo "\0prompt\037Set font\n"
+
+ls $HOME/.local/share/fonts -1
