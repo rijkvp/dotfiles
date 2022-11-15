@@ -1,0 +1,18 @@
+#!/bin/sh
+# Set theme using rofi
+
+if [ -f "$HOME/.config/themes/$@.yaml" ]
+then
+    notify-send "Setting theme to' $@'."
+    ln -sf $HOME/.config/themes/$@.yaml $HOME/.config/themes/current
+    gen-theme > /dev/null 2>&1
+    reload-theme > /dev/null 2>&1
+    exit 0
+fi
+
+echo "\0prompt\037Set theme\n"
+
+themes=$(ls $HOME/.config/themes -1 | sed '/current/d; s/.yaml//')
+echo "$themes" | while read item; do
+    echo "$item"
+done

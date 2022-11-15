@@ -1,0 +1,6 @@
+#!/bin/sh
+bookmark=$(rofi -i -p 'Insert bookmark' -theme compact -dmenu $@ < $HOME/.config/bookmarks)
+if [ ! -z "$bookmark" ]
+then
+  xdotool type "$bookmark"
+fi

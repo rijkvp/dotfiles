@@ -41,13 +41,11 @@ spawn() {
 }
 alias open='xdg-open'
 alias vim='nvim'
+alias gvim='neovide'
+alias glvim='neovide --neovim-bin $HOME/.local/bin/lvim'
 alias nb='newsboat'
 alias mp='ncmpcpp'
-alias fm='joshuto'
-
-if is_installed helix; then
-    alias hx='helix'
-fi
+alias fm='ranger'
 
 # Improved CLI tools
 if is_installed rg; then
