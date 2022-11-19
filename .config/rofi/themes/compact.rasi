@@ -1,25 +1,25 @@
 
 * {
-    bg0: {{ bg0 }};
-    bg1: {{ bg1 }};
-    fg0: {{ fg0 }};
+    bg0: #282c34;
+    bg1: #31353f;
+    fg0: #abb2bf;
 
-    primary0:  {{ primary0 }};
+    primary0:  #579dd6;
 
-    secondary0: {{ secondary0 }};
+    secondary0: #56b6c2;
 
     background-color:  transparent;
 
     highlight:     underline bold #eceff4;
     transparent: rgba(0,0,0,0);
 
-    bg-transparent: {{ bg0 }}aa;
+    bg-transparent: #282c34aa;
 }
 
 window {
     location: center;
     anchor:   center;
-    width: 500px;
+    width: 800px;
 
     border:  0px;
 
@@ -83,8 +83,8 @@ element {
 }
 
 element selected.normal {
-	background-color: @primary0;
-	text-color: @bg0;
+    background-color: @primary0;
+    text-color: @bg0;
 }
 
 element-text, element-icon {

@@ -12,12 +12,12 @@
     modkey: "Mod4",
     mousekey: "Mod4",
     tags: [
-        "1", // Dev
-        "2", // Dev2, work
-        "3", // Game
-        "爵 ", // Web
-        " ",
-        "勒 ",
+        "1", // Main 1: development
+        "2", // Main 2: ...
+        "3", // Main 3: gaming
+        "4", // Webbrowser
+        "5", // Communication
+        "6", // Background stuff
     ],
     max_window_width: None,
     layouts: [

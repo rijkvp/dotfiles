@@ -13,14 +13,13 @@
     highlight:     underline bold #eceff4;
     transparent: rgba(0,0,0,0);
 
-    dark: rgba(15,22,26,0.7);
+    bg-transparent: {{ bg0 }}aa;
 }
 
 window {
     location: center;
     anchor:   center;
-    padding: 10px;
-    width: 900px;
+    width: 800px;
 
     border:  0px;
 
@@ -46,8 +45,7 @@ message {
 inputbar {
     color: @fg0;
     padding: 11px;
-    background-color: @dark;
-    opacity: 0.5;
+    background-color: @bg-transparent;
 
     border: 2px;
     border-radius:  6px;
@@ -70,7 +68,7 @@ listview {
     border-radius: 6px;
     border-color: @primary0;
     border: 2px;
-    background-color: @dark;
+    background-color: @bg-transparent;
     dynamic: false;
 }
 
@@ -85,8 +83,8 @@ element {
 }
 
 element selected.normal {
-	background-color: @primary0;
-	text-color: @bg0;
+    background-color: @primary0;
+    text-color: @bg0;
 }
 
 element-text, element-icon {
