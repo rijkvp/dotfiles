@@ -1,0 +1,22 @@
+#!/bin/sh
+echo "Available color schemes:"
+df_dir=$HOME/dotfiles
+themes=$(ls $df_dir/theme/colorschemes -1 | sed '/current/d; s/.yaml//')
+counter=1
+echo "$themes" | while read item; do
+    echo "$counter. $item"
+    counter=$((counter + 1))
+done
+
+echo "Enter color scheme number:"
+read theme_num
+
+selected=$(echo "$themes" | sed "$theme_num!d")
+if [ -n "${selected}" ]; then
+    echo "Set theme to $selected"
+    ln -sf $df_dir/theme/colorschemes/$selected.yaml $df_dir/theme/colorschemes/current
+    df-update
+else
+    echo "Error: invalid input."
+    exit
+fi

@@ -1,0 +1,16 @@
+#!/bin/sh
+df_dir=$HOME/dotfiles
+if [ -f "$df_dir/theme/colorschemes/$@.yaml" ]
+then
+    notify-send "Setting colorscheme to $@"
+    ln -sf $df_dir/theme/colorschemes/$@.yaml df_dir/theme/colorschemes/current
+    df-update > /dev/null 2>&1
+    exit 0
+fi
+
+echo "\0prompt\037Set colorscheme\n"
+
+schemes=$(ls $df_dir/theme/colorschemes -1 | sed '/current/d; s/.yaml//')
+echo "$schemes" | while read item; do
+    echo "$item"
+done

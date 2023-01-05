@@ -1,0 +1,11 @@
+#!/bin/sh
+font_dir="$HOME/.local/share/fonts"
+if [ ! -d $font_dir/$1 ]; then
+    echo "Installing Nerd Font '$1'.."
+    zip="$font_dir/$1.zip"
+    wget -nv -O $zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$1.zip
+    unzip -d $font_dir/$1 $zip
+    rm $zip
+else
+    echo "Nerd Font '$1' already installed"
+fi

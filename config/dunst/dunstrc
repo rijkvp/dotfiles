@@ -1,0 +1,99 @@
+[global]
+    # Display
+    monitor = 0
+    follow = none
+
+    # Geometry
+    width = 300
+    height = 300
+
+    origin = top-right
+    offset = 12x34
+
+    scale = 0
+
+    notification_limit = 0
+
+    # Progress bar
+    progress_bar = true
+    progress_bar_height = 14
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+
+    indicate_hidden = yes
+
+    transparency = 20
+
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 0
+
+    frame_width = "{{border_width}}"
+
+    frame_color = "{{primary0}}"
+
+    gap_size = 8
+
+    separator_height = 2
+    separator_color = frame
+
+    sort = yes
+
+    # Text
+    font = {{font}}
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = Adwaita
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 128
+
+    # History
+    sticky_history = yes
+    history_length = 20
+
+    # Misc/Advanced
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = {{border_radius}}
+    ignore_dbusclose = false
+
+    # Mouse
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[urgency_low]
+    background = "{{bg0}}"
+    foreground = "{{fg0}}"
+    frame_color = "{{green}}"
+    timeout = 8
+
+[urgency_normal]
+    background = "{{bg0}}"
+    foreground = "{{fg0}}"
+    timeout = 10
+
+[urgency_critical]
+    background = "{{bg0}}"
+    foreground = "{{red}}"
+    frame_color = "{{red}}"
+    timeout = 0
+

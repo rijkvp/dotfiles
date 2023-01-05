@@ -1,0 +1,9 @@
+#!/bin/sh
+bookmark="$(xclip -o)"
+file="$HOME/.config/bookmarks"
+if grep -q "^$bookmark$" "$file"; then
+  notify-send -u low "Already bookmarked" "$bookmark"
+else
+  echo "$bookmark" >> "$file"
+  notify-send -u low "Added bookmark" "$bookmark"
+fi

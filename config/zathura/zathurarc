@@ -1,0 +1,31 @@
+set adjust-open "best-fit"
+set page-padding 1
+set default-bg "{{bg0}}"
+set default-fg "{{fg0}}"
+
+set statusbar-fg "{{fg0}}"
+set statusbar-bg "{{bg0}}"
+
+set highlight-color "{{primary0}}"
+set highlight-active-color "{{secondary0}}"
+
+set notification-bg "{{yellow}}"
+set notification-fg "{{black}}"
+
+set guioptions v
+set recolor-lightcolor "{{bg0}}"
+set recolor-darkcolor "{{fg0}}"
+set recolor-keephue "true"
+set selection-clipboard clipboard
+
+map p navigate previous
+map n navigate next
+map u scroll half-up
+map d scroll half-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map O zoom in
+map I zoom out
+map i recolor
+map p print

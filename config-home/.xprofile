@@ -1,0 +1,19 @@
+#!/bin/sh
+# GENERAL
+export EDITOR="nvim"
+export PATH=$PATH:$HOME/.local/bin:$HOME/dotfiles/scripts
+
+xrandr --dpi 96 # Set DPI
+
+xset r rate 400 50 # Set keyboard rate higher
+
+/usr/bin/pipewire & # Start pipewire
+
+mpd & # Start mpd
+
+eval `ssh-agent` # Start ssh agent
+
+# Unclutter, auto hides the cursor
+unclutter --start-hidden &
+# Set wallpaper
+setbg

@@ -1,0 +1,39 @@
+auto-reload yes
+reload-threads 12
+max-items 100
+
+# Firefox as browser
+browser "/usr/bin/firefox %u"
+# MPV macro
+macro w set browser "nohup mpv %u --ytdl-format=\"bestvideo[height<=?1080]+bestaudio/best\" >/dev/null 2>&1 &" ; open-in-browser ; set browser "elinks %u"
+
+# Vim keybindings
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+
+# Colors
+color background         default   default
+color listnormal         default   default  dim
+color listnormal_unread  default   default  bold
+color listfocus          black     cyan
+color listfocus_unread   black     cyan     bold
+color info               default   black
+color article            default   default
+color title              yellow    default   bold
+
+# Highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
+
+# Headings
+highlight feedlist "---.*---" green default bold
+highlight feedlist ".*0/0.." default default invis
+

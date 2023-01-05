@@ -1,0 +1,5 @@
+#!/bin/sh
+. $HOME/.config/theme_name.sh
+bg_dir=$HOME/.local/share/backgrounds/rand/
+echo "set background dir to $bg_dir"
+feh --randomize --bg-fill $bg_dir

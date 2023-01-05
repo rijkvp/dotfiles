@@ -1,0 +1,53 @@
+# Newsboat URLS Template by Rijk van Putten
+# Generated at: 2022-11-01 10:14:43 UTC
+---1.Blogs---
+https://bou.ke/feed.xml "~Bouke van der Bijl"
+https://christitus.com/index.xml "~Citus Tech Tips"
+https://drewdevault.com/blog/index.xml "~Drew DeVault"
+https://erikbern.com/atom.xml "~Erik Bernhardsson"
+https://lukesmith.xyz/rss.xml "~Luke Smith"
+https://miguelrochefort.com/blog/index.xml "~Miguel Rochefort"
+https://fasterthanli.me/index.xml "~fasterthanlime"
+---2.News---
+https://hnrss.org/best "~HackerNews Best"
+---3.Software---
+https://bevyengine.org/atom.xml "~Bevy Engine"
+https://graphite.rs/blog/rss.xml "~Graphite"
+https://blog.rust-lang.org/feed.xml "~Rust Blog"
+https://gamedev.rs/rss.xml "~Rust GameDev WG"
+https://signal.org/blog/rss.xml "~Signal Blog"
+---4.Videos_Linux---
+https://odysee.com/$/rss/@DistroTube:2 "~DistroTube"
+https://videos.lukesmith.xyz/feeds/videos.atom?sort=-publishedAt "~Luke Smith"
+https://odysee.com/$/rss/@AlphaNerd:8 "~Mental Outlaw"
+---5.Videos_Coding---
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2Xd-TjJByJyK2w1zNwY0zQ "~Beyond Fireship"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0e3QhIYukixgh5VVpKHH9Q "~Code Bullet"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIabPXjvT5BVTxRDPCBBOOQ "~Dani"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZuNN5_Qnv1rFyN5wqQtXmQ "~Dave Frampton"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCKCTmact-90hXpV2ns8GSsA "~DevDuck"
+https://odysee.com/$/rss/@fireship:6 "~Fireship"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCK8XIGR5kRidIw2fWqwyHRA "~Reducible"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCmtyQOKKmrMVaKuRXz02jbQ "~Sebastian Lague"
+https://www.youtube.com/feeds/videos.xml?channel_id=UChl_NKOs1qqh_x7yJfaDpDw "~Tantan"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQ-W1KE9EYfdxhL6S4twUNw "~The Cherno"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC8ENHE5xdFSwx71u3fDH5Xw "~ThePrimeagen"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUkRj4qoT1bsWpE_C8lZYoQ "~ThinMatrix"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs4fQRyl1TJvoeOdekW6lYA "~fasterthanlime"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCUzQJ3JBuQ9w-po4TXRJHiA "~jdh"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCS1TedAX9-5yRl9Tx5E2qmg "~voxelbee"
+---6.Videos_Other---
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0intLFzLaudFG-xAvUEO-A "~Not Just Bikes"
+---7.Videos_Science---
+https://odysee.com/$/rss/@veritasium:f "~Veritasium"
+---8.Occasionally_intresting---
+https://www.youtube.com/feeds/videos.xml?channel_id=UCGc8ZVCsrR3dAuhvUbkbToQ "~City Beautiful"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q "~Kurzgesagt"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw "~LTT"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCl2mFZoRqjw_ELax4Yisf6w "~Louis Rossman"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCY1kMZp36IQSyNx_9h4mpCg "~Mark Rober"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9x0AN7BWHpCDHSm9NiJFJQ "~NetworkChuck"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCs6KfncB4OV6Vug4o_bzijg "~Techlore"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC5UAwBUum7CPN5buc-_N1Fw "~The Linux Experiment"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A "~Tom Scott"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9RM-iSvTu1uPJb8X5yp3EQ "~Wendover Productions"

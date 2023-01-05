@@ -1,0 +1,4 @@
+#/bin/sh
+df_dir=$HOME/dotfiles
+mudflow -s $df_dir/theme/colorschemes/current -s $df_dir/theme/theme.yaml -f yaml -o $HOME/.config "$df_dir/config/**"
+mudflow -s $df_dir/theme/colorschemes/current -s $df_dir/theme/theme.yaml -f yaml -o $HOME "$df_dir/config-home/**"
