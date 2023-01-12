@@ -1,0 +1,14 @@
+#!/bin/sh
+appimage_dir=$HOME/apps
+apps=$(ls $appimage_dir -1)
+
+echo "$apps" | while read app; do
+name=$(basename $app .AppImage)
+echo "[Desktop Entry]
+Name=$name
+Exec=$appimage_dir/$app
+Terminal=false
+Type=Application
+" > $HOME/.local/share/applications/$name.desktop
+
+done

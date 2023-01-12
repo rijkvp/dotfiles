@@ -1,0 +1,23 @@
+# VARDA: https://github.com/JohnOberhauser/Varda-Theme
+name: 'varda'
+
+white: '#D0EBEE'
+black: '#0C0E11'
+
+red: '#733447'
+orange: '#C78C56'
+yellow: '#C78C56'
+green: '#257B76'
+cyan: '#134A5A'
+blue: '#52677C'
+magenta: '#604575'
+pink: '#604575'
+
+primary0: '#52677c'
+secondary0: '#2e3436'
+  
+fg0: '#D0EBEE'
+fg1: '#D0EBEE'
+
+bg0: '#0C0E11'
+bg1: '#0C0E11'
