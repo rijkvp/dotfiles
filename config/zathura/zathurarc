@@ -18,8 +18,6 @@ set recolor-darkcolor "{{fg0}}"
 set recolor-keephue "true"
 set selection-clipboard clipboard
 
-map p navigate previous
-map n navigate next
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
